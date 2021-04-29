@@ -32,6 +32,8 @@ public class Home extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        
+        lbuname.setText(username);
                 
         int totCredit = 0;
         float totMultiple=0;
@@ -104,6 +106,7 @@ public class Home extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        lbuname = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         addYear = new javax.swing.JLabel();
         addSemester = new javax.swing.JLabel();
@@ -111,8 +114,8 @@ public class Home extends javax.swing.JFrame {
         addResults = new javax.swing.JLabel();
         viewreports = new javax.swing.JLabel();
         txtGPA = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         viewsubject = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -135,12 +138,17 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        lbuname.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lbuname.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(213, Short.MAX_VALUE)
+                .addGap(36, 36, 36)
+                .addComponent(lbuname, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addGap(131, 131, 131)
                 .addComponent(jLabel6)
@@ -152,7 +160,9 @@ public class Home extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(lbuname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5)))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -220,11 +230,6 @@ public class Home extends javax.swing.JFrame {
         txtGPA.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel1.add(txtGPA, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 200, 60));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("GPA");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, -1, -1));
-
         viewsubject.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         viewsubject.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Eye_50px.png"))); // NOI18N
         viewsubject.setText("View Subjects");
@@ -234,6 +239,11 @@ public class Home extends javax.swing.JFrame {
             }
         });
         jPanel1.add(viewsubject, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 170, 64));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("GPA");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, -1, -1));
 
         jPanel9.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 590, 400));
 
@@ -342,12 +352,13 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel addSemester;
     private javax.swing.JLabel addSubject;
     private javax.swing.JLabel addYear;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JLabel lbuname;
     private javax.swing.JLabel txtGPA;
     private javax.swing.JLabel viewreports;
     private javax.swing.JLabel viewsubject;

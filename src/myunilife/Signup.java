@@ -237,6 +237,7 @@ public class Signup extends javax.swing.JFrame {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/myunilife","root","");
 
+            String username = txtuname.getText();
             String index = txtindex.getText();
             char[] password = enterpassword.getPassword();
             char[] confirmpassword = cpassword.getPassword();
@@ -261,7 +262,10 @@ public class Signup extends javax.swing.JFrame {
                 int update = pst.executeUpdate();
 
                 if(update == 1){
-                    JOptionPane.showMessageDialog(null,"Insert is sucess");                
+                    //JOptionPane.showMessageDialog(null,"Insert is sucess");                
+                    Home home = new Home(username);
+                    home.setVisible(true);
+                    dispose();
                 }else{
                     JOptionPane.showMessageDialog(null,"Insert is failed");
                 }
