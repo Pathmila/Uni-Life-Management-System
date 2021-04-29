@@ -47,6 +47,7 @@ public class Login extends javax.swing.JFrame {
         lbyear7 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -119,6 +120,13 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("My Uni Life");
 
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Close Window.png"))); // NOI18N
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -126,14 +134,18 @@ public class Login extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(215, 215, 215)
                 .addComponent(jLabel2)
-                .addGap(205, 205, 205))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(38, 38, 38))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addComponent(jLabel2)
-                .addGap(38, 38, 38))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(30, 30, 30))
         );
 
         jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 120));
@@ -177,25 +189,29 @@ public class Login extends javax.swing.JFrame {
 
             int pwd = enterpassword.hashCode();
 
-            String sql = "select * from mydetails wnere username='"+uname+"' and password='"+pwd+"' ";
+            String sql = "select * from mydetails where username= '"+uname+"' ";
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
 
-            String username = rs.getString(2);
-            int pass = rs.getInt(3);
-
-            if((username == uname)){
-                if(pwd == pass){
-                    Home home = new Home(username);
-                    home.setVisible(true);
-                    dispose();
+            if(rs.next()){
+                String username = rs.getString(2);
+                int pass = rs.getInt(3);
+             
+                //val1.equals(val2)
+                System.out.println("db-"+pass+"  enter-"+pwd);
+            
+                if((username.equals(uname))){
+                    if(pwd == pass){
+                        Home home = new Home(username);
+                        home.setVisible(true);
+                        dispose();
+                    }else{
+                        JOptionPane.showMessageDialog(null,"Invalid password.");
+                    }
                 }else{
-                    JOptionPane.showMessageDialog(null,"Invalid password.");
+                    JOptionPane.showMessageDialog(null,"Invalid username.");
                 }
-            }else{
-                JOptionPane.showMessageDialog(null,"Invalid username.");
             }
-
             con.close();
             //dispose();
             //Dashboard dashboard = new Dashboard(adminName);
@@ -204,6 +220,10 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_btnsignupActionPerformed
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        dispose();
+    }//GEN-LAST:event_jLabel6MouseClicked
 
     /**
      * @param args the command line arguments
@@ -244,6 +264,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton btnsignup;
     private javax.swing.JPasswordField enterpassword;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
