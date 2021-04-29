@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Simple_Blue" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="20d6e081-59e4-40a9-9ba2-018f0c5955d9">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="myunilife"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="yid" class="java.lang.String"/>
+	<parameter name="semid" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select s.code , r.result from subject s , results r where s.subid = r.subid and s.yid = yid and s.semid= semid]]>
+	</queryString>
+	<field name="result" class="java.lang.String"/>
+	<field name="code" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="d241bbad-ae81-449c-8e32-6aa083a064b9"/>
+				<staticText>
+					<reportElement x="230" y="20" width="140" height="43" forecolor="#FFFFFF" uuid="21a0b367-515f-494d-9d9c-23ceb9641c7a"/>
+					<textElement textAlignment="Center">
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Results]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="143">
+			<line>
+				<reportElement x="-20" y="80" width="595" height="1" forecolor="#666666" uuid="ea34e98b-a8ab-4910-8fe6-572c7d2d1db2"/>
+			</line>
+			<textField>
+				<reportElement x="60" y="20" width="100" height="30" uuid="67c4c5fd-f3f8-4921-9bb7-218d31e10007"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{yid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="20" width="100" height="30" uuid="7018f5b4-60c0-429c-b82a-d0aaa69e73f8"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{semid}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="20" width="46" height="30" uuid="8b4d040d-3299-4896-83a5-5faf3ffa23d8"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Year : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="20" width="70" height="30" uuid="342ec184-bf7f-4eea-9cc4-d0e8d0f97b68"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Semester : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="100" width="100" height="30" uuid="945ee932-fbb5-47ff-80e9-ef5774bde548"/>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Subject]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="100" width="100" height="30" uuid="0afb540a-e273-4f84-b1cd-81594cb8952d"/>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Result]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band/>
+		<band height="46">
+			<textField>
+				<reportElement x="90" y="10" width="100" height="30" uuid="8bb7e46f-8042-4669-8360-c8b60804cb71"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{code}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="10" width="100" height="30" uuid="bac89cfd-fbc8-4dc3-a8ca-03b76731b235"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{result}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="406f9c01-c1cd-4a33-85fb-1101c429c77d"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="ddbaa4eb-8441-4425-b1c7-7f1182e9a060"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="351c8fde-1b2a-474b-bfa6-098c8605d507"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

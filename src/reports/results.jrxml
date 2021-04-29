@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="results" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="11a3621c-ca10-46cf-8987-ee5095da07d0">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="myunilife"/>
+	<subDataset name="Empty Dataset1" uuid="2526636c-4171-4d7c-bd19-3c1c05dfd821"/>
+	<queryString>
+		<![CDATA[SELECT s.code, r.result
+FROM results r , subject s
+where s.subid = r.subid]]>
+	</queryString>
+	<field name="subid" class="java.lang.Integer"/>
+	<field name="result" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="126" splitType="Stretch">
+			<textField pattern="HH:mm">
+				<reportElement x="110" y="0" width="100" height="30" uuid="aaaee02a-1694-43f2-b996-b65e7e6c280c"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="0" width="100" height="30" uuid="74c9204a-0371-4046-b27e-23d38222de27"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="55" width="210" height="55" uuid="cb9c9030-c594-41aa-98dc-86c0a8b01598"/>
+				<textElement textAlignment="Center">
+					<font fontName="Chaparral Pro Light" size="38" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Exam Results]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="50">
+			<staticText>
+				<reportElement x="145" y="10" width="100" height="30" uuid="edcdaa5d-88f7-4a0b-b0c6-09fa432594aa"/>
+				<textElement textAlignment="Center">
+					<font size="17" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Subject]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="10" width="100" height="30" uuid="0b277afc-6e95-4882-a6d0-a81dbe7f39b8"/>
+				<textElement textAlignment="Center">
+					<font size="17" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Result]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement x="150" y="10" width="90" height="30" uuid="8d6fba4d-e7a4-40ec-982b-698879526d2a"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="10" width="100" height="30" uuid="2675dec5-b621-4502-bc11-079ce1eff3ee"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{result}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="40">
+			<textField>
+				<reportElement x="235" y="10" width="100" height="30" uuid="957a733c-2962-47d0-b305-2d61b1f964b6"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>
