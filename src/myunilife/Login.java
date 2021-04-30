@@ -188,17 +188,19 @@ public class Login extends javax.swing.JFrame {
             char[] password = enterpassword.getPassword();
 
             int pwd = enterpassword.hashCode();
-
-            String sql = "select * from mydetails where username= '"+uname+"' ";
+            System.out.println("enter-"+pwd);
+            String sql = "select * from mydetails where username= '"+uname+"' and password='"+pwd+"'";
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
 
-            if(rs.next()){
-                String username = rs.getString(2);
+            if(!rs.next()){
+                JOptionPane.showMessageDialog(null,"Wrong Username and Password.");
+            /*    String username = rs.getString(2);
                 int pass = rs.getInt(3);
              
-                //val1.equals(val2)
-                System.out.println("db-"+pass+"  enter-"+pwd);
+                
+                //System.out.println("db-"+pass+"  enter-"+pwd);
+                System.out.println((pwd-pass)==0);
             
                 if((username.equals(uname))){
                     if(pwd == pass){
@@ -211,6 +213,7 @@ public class Login extends javax.swing.JFrame {
                 }else{
                     JOptionPane.showMessageDialog(null,"Invalid username.");
                 }
+                */
             }
             con.close();
             //dispose();
