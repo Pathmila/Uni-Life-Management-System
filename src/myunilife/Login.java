@@ -187,9 +187,14 @@ public class Login extends javax.swing.JFrame {
             String uname = txtuname.getText();
             char[] password = enterpassword.getPassword();
 
-            int pwd = enterpassword.hashCode();
-            System.out.println("enter-"+pwd);
-            String sql = "select * from mydetails where username= '"+uname+"' and password='"+pwd+"'";
+            //int pwd = enterpassword.hashCode();
+            //System.out.println("enter-"+pwd);
+            
+            SimpleMD5Example simpleMD5Example = new SimpleMD5Example();
+            String md5 = simpleMD5Example.getHash(password);
+                    
+            //make the pw string on db 
+            String sql = "select * from mydetails where username= '"+uname+"' and password='"+md5+"'";
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
 

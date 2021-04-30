@@ -12,9 +12,8 @@ import javax.swing.JOptionPane;
  *
  * @author ASUS
  */
-public class SimpleMD5Example {
-    public static void main(String[] args) 
-    {
+public class SimpleMD5Example {    
+    public String getHash(char[] password){    
         String passwordToHash = "password";
         String generatedPassword = null;
         try {
@@ -36,6 +35,6 @@ public class SimpleMD5Example {
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }
-        System.out.println(generatedPassword);
+        return generatedPassword ;
     }
 }
