@@ -59,7 +59,6 @@ public class Signup extends javax.swing.JFrame {
         enterpassword = new javax.swing.JPasswordField();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -98,7 +97,7 @@ public class Signup extends javax.swing.JFrame {
         jPanel3.add(lbyear1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, 40));
 
         lbyear2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lbyear2.setText("Comfir Password");
+        lbyear2.setText("Confirm Password");
         jPanel3.add(lbyear2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, 40));
 
         jTextField1.setText("jTextField1");
@@ -125,64 +124,57 @@ public class Signup extends javax.swing.JFrame {
                 txtnameActionPerformed(evt);
             }
         });
-        jPanel3.add(txtname, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 130, 30));
+        jPanel3.add(txtname, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 130, 30));
 
         txtuni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtuniActionPerformed(evt);
             }
         });
-        jPanel3.add(txtuni, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 130, 30));
+        jPanel3.add(txtuni, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 130, 30));
 
         txtregisterno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtregisternoActionPerformed(evt);
             }
         });
-        jPanel3.add(txtregisterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 130, 30));
+        jPanel3.add(txtregisterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 130, 30));
 
         txtindex.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtindexActionPerformed(evt);
             }
         });
-        jPanel3.add(txtindex, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 130, 30));
+        jPanel3.add(txtindex, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 130, 30));
 
         txtuname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtunameActionPerformed(evt);
             }
         });
-        jPanel3.add(txtuname, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 130, 30));
+        jPanel3.add(txtuname, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 130, 30));
 
         cpassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cpasswordActionPerformed(evt);
             }
         });
-        jPanel3.add(cpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 130, 30));
+        jPanel3.add(cpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 130, 30));
 
         enterpassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enterpasswordActionPerformed(evt);
             }
         });
-        jPanel3.add(enterpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 130, 30));
+        jPanel3.add(enterpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 130, 30));
 
-        jPanel4.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 310, 400));
+        jPanel4.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 320, 400));
 
         jPanel5.setBackground(new java.awt.Color(0, 0, 153));
 
         jLabel2.setFont(new java.awt.Font("Lucida Bright", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("My Uni Life");
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home_30px.png"))); // NOI18N
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -191,16 +183,13 @@ public class Signup extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(215, 215, 215)
                 .addComponent(jLabel2)
-                .addGap(135, 135, 135)
-                .addComponent(jLabel6))
+                .addGap(205, 205, 205))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel2))
+                .addComponent(jLabel2)
                 .addGap(38, 38, 38))
         );
 
@@ -284,12 +273,6 @@ public class Signup extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnsignupActionPerformed
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        dispose();
-        Home home = new Home();
-        home.setVisible(true);
-    }//GEN-LAST:event_jLabel6MouseClicked
-
     private void txtnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtnameActionPerformed
@@ -358,7 +341,6 @@ public class Signup extends javax.swing.JFrame {
     private javax.swing.JPasswordField cpassword;
     private javax.swing.JPasswordField enterpassword;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
