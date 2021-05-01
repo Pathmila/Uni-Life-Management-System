@@ -201,7 +201,7 @@ public class ForgetPassword extends javax.swing.JFrame {
             
                     if(rs1>0){
                         JOptionPane.showMessageDialog(null, "Successfully Updated");
-                        Home home = new Home();
+                        Home home = new Home(uname);
                         home.setVisible(true);
                         dispose();
                     }else{

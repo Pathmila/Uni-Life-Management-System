@@ -245,7 +245,29 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void lbyear9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbyear9MouseClicked
-        // TODO add your handling code here:
+         try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/myunilife","root","");
+
+            String sql = "select * from mydetails";
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+
+            if(!rs.next()){
+               Signup signup = new Signup();
+               signup.setVisible(true);
+               dispose();
+            }else{
+                JOptionPane.showMessageDialog(null,"You have an account already.");
+            }
+                            
+            con.close();
+            //dispose();
+            //Dashboard dashboard = new Dashboard(adminName);
+            //dashboard.setVisible(true);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_lbyear9MouseClicked
 
     /**
