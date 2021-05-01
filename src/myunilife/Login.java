@@ -192,23 +192,24 @@ public class Login extends javax.swing.JFrame {
             
             SimpleMD5Example simpleMD5Example = new SimpleMD5Example();
             String md5 = simpleMD5Example.getHash(password);
+            System.out.println("enter-"+md5);
                     
             //make the pw string on db 
             String sql = "select * from mydetails where username= '"+uname+"' and password='"+md5+"'";
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
 
-            if(!rs.next()){
-                JOptionPane.showMessageDialog(null,"Wrong Username and Password.");
-            /*    String username = rs.getString(2);
-                int pass = rs.getInt(3);
+            if(rs.next()){
+                //JOptionPane.showMessageDialog(null,"Wrong Username and Password.");
+                String username = rs.getString(2);
+                String pwd = rs.getString(3);
              
                 
                 //System.out.println("db-"+pass+"  enter-"+pwd);
-                System.out.println((pwd-pass)==0);
+                //System.out.println((pwd-pass)==0);
             
                 if((username.equals(uname))){
-                    if(pwd == pass){
+                    if((pwd.equals(md5))){
                         Home home = new Home(username);
                         home.setVisible(true);
                         dispose();
@@ -218,7 +219,7 @@ public class Login extends javax.swing.JFrame {
                 }else{
                     JOptionPane.showMessageDialog(null,"Invalid username.");
                 }
-                */
+                
             }
             con.close();
             //dispose();

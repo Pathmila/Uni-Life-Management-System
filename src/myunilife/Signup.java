@@ -246,11 +246,14 @@ public class Signup extends javax.swing.JFrame {
             boolean result = validation.validPassword(password,confirmpassword);
             
             if(result){
-                int pwd = enterpassword.hashCode();
+                SimpleMD5Example simpleMD5Example = new SimpleMD5Example();
+                String md5 = simpleMD5Example.getHash(password);
+                
+                
                 String sql = "insert into mydetails (username,password,name,university,degree,registrationno,indexno) values(?,?,?,?,?,?,?)";
                 PreparedStatement pst= con.prepareStatement(sql);
                 pst.setString(1, (String)txtuname.getText());
-                pst.setInt(2, (Integer)pwd);
+                pst.setString(2, md5);
                 pst.setString(3, (String)txtname.getText());
                 pst.setString(4, (String)txtuni.getText());
                 pst.setString(5, (String)txtregisterno.getText());
