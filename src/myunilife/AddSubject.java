@@ -28,6 +28,14 @@ public class AddSubject extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+    }
+    
+    public AddSubject(String username) {
+        initComponents();
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        
+        lbuname.setText(username);
         
         try{
             Class.forName("com.mysql.jdbc.Driver");
@@ -77,9 +85,11 @@ public class AddSubject extends javax.swing.JFrame {
         credits = new javax.swing.JSpinner();
         lbyear4 = new javax.swing.JLabel();
         txtcode = new javax.swing.JTextField();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        lbuname = new javax.swing.JLabel();
+        lbuname1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -227,11 +237,13 @@ public class AddSubject extends javax.swing.JFrame {
 
         jPanel4.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 310, 380));
 
-        jPanel5.setBackground(new java.awt.Color(0, 0, 153));
+        jPanel2.setBackground(new java.awt.Color(0, 0, 153));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Lucida Bright", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("My Uni Life");
+        jLabel1.setFont(new java.awt.Font("Lucida Bright", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("My Uni Life");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home_30px.png"))); // NOI18N
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -239,28 +251,19 @@ public class AddSubject extends javax.swing.JFrame {
                 jLabel6MouseClicked(evt);
             }
         });
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 40, -1, -1));
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(215, 215, 215)
-                .addComponent(jLabel2)
-                .addGap(135, 135, 135)
-                .addComponent(jLabel6))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel2))
-                .addGap(38, 38, 38))
-        );
+        lbuname.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lbuname.setForeground(new java.awt.Color(255, 255, 255));
+        lbuname.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel2.add(lbuname, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 77, 30));
 
-        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 120));
+        lbuname1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lbuname1.setForeground(new java.awt.Color(255, 255, 255));
+        lbuname1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel2.add(lbuname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 77, 30));
+
+        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 120));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -400,13 +403,15 @@ public class AddSubject extends javax.swing.JFrame {
     private javax.swing.JSpinner credits;
     private javax.swing.JComboBox<String> jComboBoxsemster;
     private javax.swing.JComboBox<String> jComboBoxyear;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lbaddyear;
+    private javax.swing.JLabel lbuname;
+    private javax.swing.JLabel lbuname1;
     private javax.swing.JLabel lbyear;
     private javax.swing.JLabel lbyear1;
     private javax.swing.JLabel lbyear2;

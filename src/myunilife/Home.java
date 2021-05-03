@@ -139,6 +139,7 @@ public class Home extends javax.swing.JFrame {
         });
 
         lbuname.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lbuname.setForeground(new java.awt.Color(255, 255, 255));
         lbuname.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -272,31 +273,36 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewsubjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewsubjectMouseClicked
-        ViewSubject viewSubject = new ViewSubject();
+       String uname = lbuname.getText();
+        ViewSubject viewSubject = new ViewSubject(uname);
         viewSubject.setVisible(true);
         dispose();
     }//GEN-LAST:event_viewsubjectMouseClicked
 
     private void addResultsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addResultsMouseClicked
-        SearchSubject searchResults = new SearchSubject();
+        String uname = lbuname.getText();
+        SearchSubject searchResults = new SearchSubject(uname);
         searchResults.setVisible(true);
         dispose();
     }//GEN-LAST:event_addResultsMouseClicked
 
     private void addSubjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addSubjectMouseClicked
-        AddSubject addsubject = new AddSubject();
+        String uname = lbuname.getText();
+        AddSubject addsubject = new AddSubject(uname);
         addsubject.setVisible(true);
         dispose();
     }//GEN-LAST:event_addSubjectMouseClicked
 
     private void addSemesterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addSemesterMouseClicked
-        AddSemester addSemester = new AddSemester();
+        String uname = lbuname.getText();
+        AddSemester addSemester = new AddSemester(uname);
         addSemester.setVisible(true);
         dispose();
     }//GEN-LAST:event_addSemesterMouseClicked
 
     private void addYearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addYearMouseClicked
-        AddYear addYear = new AddYear();
+        String uname = lbuname.getText();
+        AddYear addYear = new AddYear(uname);
         addYear.setVisible(true);
         dispose();
     }//GEN-LAST:event_addYearMouseClicked
@@ -306,7 +312,8 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void viewreportsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewreportsMouseClicked
-        ViewReports viewReports = new ViewReports(GPA,degree);
+        String uname = lbuname.getText();
+        ViewReports viewReports = new ViewReports(GPA,degree,uname);
         viewReports.setVisible(true);
         dispose();
     }//GEN-LAST:event_viewreportsMouseClicked
