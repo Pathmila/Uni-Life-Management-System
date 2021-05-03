@@ -29,6 +29,8 @@ public class AddSemester extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        
+        lbuname.setText(username);
     }
 
     /**
@@ -50,7 +52,6 @@ public class AddSemester extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         lbuname = new javax.swing.JLabel();
-        lbuname1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -117,11 +118,6 @@ public class AddSemester extends javax.swing.JFrame {
         lbuname.setForeground(new java.awt.Color(255, 255, 255));
         lbuname.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel2.add(lbuname, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 52, 77, 30));
-
-        lbuname1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        lbuname1.setForeground(new java.awt.Color(255, 255, 255));
-        lbuname1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(lbuname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 77, 30));
 
         jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 120));
 
@@ -232,7 +228,6 @@ public class AddSemester extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lbaddyear;
     private javax.swing.JLabel lbuname;
-    private javax.swing.JLabel lbuname1;
     private javax.swing.JLabel lbyear;
     // End of variables declaration//GEN-END:variables
 }
