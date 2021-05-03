@@ -244,9 +244,10 @@ public class UpdateSubject extends javax.swing.JFrame {
 
             if(update == 1){
                 JOptionPane.showMessageDialog(null,"Update is sucess");
-                dispose();
-                Home home = new Home();
+                String uname = lbuname.getText();                
+                Home home = new Home(uname);
                 home.setVisible(true);
+                dispose();
             }else{
                 JOptionPane.showMessageDialog(null,"Update is failed");
             }
@@ -268,9 +269,10 @@ public class UpdateSubject extends javax.swing.JFrame {
     }//GEN-LAST:event_txtcodeActionPerformed
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        dispose();
-        Home home = new Home();
+        String uname = lbuname.getText();  
+        Home home = new Home(uname);
         home.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
 
     /**

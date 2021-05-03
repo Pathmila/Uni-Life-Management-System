@@ -201,8 +201,7 @@ public class ViewReports extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addYearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addYearMouseClicked
-        AddYear addYear = new AddYear();
-        addYear.setVisible(true);
+
     }//GEN-LAST:event_addYearMouseClicked
 
     private void addResultsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addResultsMouseClicked
@@ -239,9 +238,10 @@ public class ViewReports extends javax.swing.JFrame {
     }//GEN-LAST:event_addYear2MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        dispose();
-        Home home = new Home();
+        String uname = lbuname.getText();
+        Home home = new Home(uname);
         home.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
 
     /**

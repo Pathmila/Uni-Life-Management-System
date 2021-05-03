@@ -324,9 +324,10 @@ public class ViewResultsBased extends javax.swing.JFrame {
     }//GEN-LAST:event_btnaddMouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        dispose();
+        String uname = lbuname.getText();          
         Home home = new Home();
         home.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
 
     /**

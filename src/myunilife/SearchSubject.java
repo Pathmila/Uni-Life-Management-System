@@ -299,10 +299,10 @@ public class SearchSubject extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxsemsterActionPerformed
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        dispose();
         String uname = lbuname.getText();
         Home home = new Home(uname);
         home.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
 
     /**
