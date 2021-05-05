@@ -40,7 +40,7 @@ public class ViewResultsBased extends javax.swing.JFrame {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
     
-    public ViewResultsBased(String username) {
+    public ViewResultsBased(String username,float GPA) {
         initComponents();
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);

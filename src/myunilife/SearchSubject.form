@@ -24,7 +24,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Component id="jPanel1" alignment="0" pref="1000" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -45,10 +45,10 @@
         <Property name="useNullLayout" type="boolean" value="false"/>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="jPanel4">
+        <Container class="javax.swing.JPanel" name="jPanel5">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="ff" green="ff" red="99" type="rgb"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -63,260 +63,336 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="-1" height="570"/>
+              <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
 
-          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-            <Property name="useNullLayout" type="boolean" value="false"/>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jPanel6" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jPanel6" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="javax.swing.JPanel" name="jPanel3">
+            <Container class="javax.swing.JPanel" name="jPanel6">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder>
-                      <Color PropertyName="color" blue="99" green="0" red="0" type="rgb"/>
-                    </LineBorder>
+                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                    <BevelBorder/>
                   </Border>
                 </Property>
               </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="160" y="170" width="310" height="340"/>
-                </Constraint>
-              </Constraints>
 
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="119" pref="119" max="-2" attributes="0"/>
-                          <Component id="btnadd" min="-2" pref="80" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="384" max="32767" attributes="0"/>
+                          <Component id="lbuname" min="-2" pref="77" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="txtGPA" min="-2" pref="200" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="lbaddyear" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="690" max="-2" attributes="0"/>
-                          <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="lbyear" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
-                                  <Component id="jComboBoxsemster" min="-2" pref="130" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="lbyear1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="69" pref="69" max="-2" attributes="0"/>
-                                  <Component id="jComboBoxyear" min="-2" pref="130" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jPanel3" min="-2" pref="355" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="255" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="24" pref="24" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                                  <Component id="lbuname" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="jLabel7" alignment="1" min="-2" pref="40" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="lbaddyear" min="-2" pref="60" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jComboBoxyear" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="lbyear1" alignment="1" min="-2" pref="40" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jComboBoxsemster" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="lbyear" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                                  <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="btnadd" min="-2" pref="30" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JLabel" name="lbyear">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="14" style="1"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Semester"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBoxsemster">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="cc" red="cc" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="14" style="1"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxsemsterActionPerformed"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
-                </Component>
-                <Component class="javax.swing.JButton" name="btnadd">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="0" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="14" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Search"/>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="null"/>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnaddActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JLabel" name="lbaddyear">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="36" style="1"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Search Subject"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="lbyear1">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="14" style="1"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Year"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBoxyear">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="cc" red="cc" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="14" style="1"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxyearActionPerformed"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
-                </Component>
-                <Component class="javax.swing.JTextField" name="jTextField1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JPanel" name="jPanel2">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="0" red="0" type="rgb"/>
-                </Property>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="0" y="0" width="630" height="120"/>
-                </Constraint>
-              </Constraints>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                          <Component id="lbuname" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
-                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="39" pref="39" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Component id="lbuname" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtGPA" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="38" max="32767" attributes="0"/>
+                          <EmptySpace pref="27" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel1">
+                <Component class="javax.swing.JLabel" name="jLabel7">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/icon/Close Window.png"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel7MouseClicked"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel2">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Lucida Bright" size="36" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                      <Font name="Monotype Corsiva" size="48" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="My Uni Life"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel6">
+                <Component class="javax.swing.JLabel" name="jLabel3">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/icon/Home_30px.png"/>
+                      <Image iconType="3" name="/icon/pharm2018-03-278219841.jpg"/>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel6MouseClicked"/>
-                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel4">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="36" style="0"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="GPA"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="txtGPA">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="cc" green="ff" red="66" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="36" style="1"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="alignmentX" type="float" value="0.5"/>
+                    <Property name="horizontalTextPosition" type="int" value="0"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbuname">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="18" style="0"/>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JLabel" name="jLabel8">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/icon/Home_30px.png"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel8MouseClicked"/>
+                  </Events>
+                </Component>
+                <Container class="javax.swing.JPanel" name="jPanel3">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                        <EtchetBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="lbaddyear" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="lbyear" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                          <Component id="jComboBoxsemster" min="-2" pref="163" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="lbyear1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                                          <Component id="jComboBoxyear" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="669" max="-2" attributes="0"/>
+                              <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
+                              <Component id="btnadd" min="-2" pref="80" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="lbaddyear" min="-2" pref="60" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lbyear1" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="jComboBoxyear" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jComboBoxsemster" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="lbyear" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                              <Component id="btnadd" min="-2" pref="30" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="lbyear">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="14" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Semester"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="jComboBoxsemster">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="14" style="1"/>
+                        </Property>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="0"/>
+                        </Property>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxsemsterActionPerformed"/>
+                      </Events>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnadd">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="99" green="0" red="0" type="rgb"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="14" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Search"/>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="null"/>
+                        </Property>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnaddActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lbaddyear">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="36" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Search Subject"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lbyear1">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="14" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Year"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="jComboBoxyear">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="14" style="1"/>
+                        </Property>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="0"/>
+                        </Property>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxyearActionPerformed"/>
+                      </Events>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="jTextField1">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="jTextField1"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
               </SubComponents>
             </Container>
           </SubComponents>

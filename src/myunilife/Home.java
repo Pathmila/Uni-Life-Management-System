@@ -306,28 +306,28 @@ public class Home extends javax.swing.JFrame {
 
     private void addYear1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addYear1MouseClicked
         String uname = lbuname.getText();          
-        AddYear addYear = new AddYear(uname);
+        AddYear addYear = new AddYear(uname,GPA);
         addYear.setVisible(true);
         dispose();
     }//GEN-LAST:event_addYear1MouseClicked
 
     private void addSemester1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addSemester1MouseClicked
         String uname = lbuname.getText();          
-        AddSemester addSemester = new AddSemester(uname);
+        AddSemester addSemester = new AddSemester(uname,GPA);
         addSemester.setVisible(true);
         dispose();
     }//GEN-LAST:event_addSemester1MouseClicked
 
     private void addSubject1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addSubject1MouseClicked
         String uname = lbuname.getText();          
-        AddSubject addSubject = new AddSubject(uname);
+        AddSubject addSubject = new AddSubject(uname,GPA);
         addSubject.setVisible(true);
         dispose();
     }//GEN-LAST:event_addSubject1MouseClicked
 
     private void addResults1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addResults1MouseClicked
         String uname = lbuname.getText();          
-        SearchSubject searchSubject = new SearchSubject(uname);
+        SearchSubject searchSubject = new SearchSubject(uname,GPA);
         searchSubject.setVisible(true);
         dispose();
     }//GEN-LAST:event_addResults1MouseClicked
@@ -341,7 +341,7 @@ public class Home extends javax.swing.JFrame {
 
     private void viewsubject1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewsubject1MouseClicked
         String uname = lbuname.getText();          
-        ViewSubject viewSubject = new ViewSubject(uname);
+        ViewSubject viewSubject = new ViewSubject(uname,GPA);
         viewSubject.setVisible(true);
         dispose();
     }//GEN-LAST:event_viewsubject1MouseClicked

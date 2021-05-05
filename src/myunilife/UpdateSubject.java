@@ -26,7 +26,7 @@ public class UpdateSubject extends javax.swing.JFrame {
     public UpdateSubject() {
         initComponents();
     }
-    public UpdateSubject(String subject, String username) {
+    public UpdateSubject(String subject, String username,float GPA) {
         initComponents();
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);

@@ -30,7 +30,7 @@ public class ViewSubject extends javax.swing.JFrame {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);        
     }
     
-    public ViewSubject(String username) {
+    public ViewSubject(String username,float GPA) {
         initComponents();
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);

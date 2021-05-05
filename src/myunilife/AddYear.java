@@ -19,18 +19,23 @@ public class AddYear extends javax.swing.JFrame {
     /**
      * Creates new form AddYear
      */
+    
+    float TGPA=0;
+    
     public AddYear() {
         initComponents();
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
-    public AddYear(String username) {
+    public AddYear(String username,float GPA) {
         initComponents();
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         
         lbuname.setText(username);
+        TGPA=GPA;
+        txtGPA.setText(Double.toString(GPA));
     }
     
     /**
@@ -111,7 +116,6 @@ public class AddYear extends javax.swing.JFrame {
         lbyear.setText("Year");
         jPanel3.add(lbyear, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, 40));
 
-        jComboBoxyear.setBackground(new java.awt.Color(204, 204, 255));
         jComboBoxyear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jComboBoxyear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
         jComboBoxyear.addActionListener(new java.awt.event.ActionListener() {

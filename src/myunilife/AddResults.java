@@ -30,7 +30,7 @@ public class AddResults extends javax.swing.JFrame {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
    
-    public AddResults(int yid, int semid, String username) {
+    public AddResults(int yid, int semid, String username,float GPA) {
         initComponents();
         setLocationRelativeTo(null);
         
