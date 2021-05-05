@@ -66,11 +66,11 @@ public class ViewReports extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         addYear = new javax.swing.JLabel();
-        addResults = new javax.swing.JLabel();
         viewreports = new javax.swing.JLabel();
         lbaddyear = new javax.swing.JLabel();
         addYear1 = new javax.swing.JLabel();
         addYear2 = new javax.swing.JLabel();
+        addResults = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -126,17 +126,7 @@ public class ViewReports extends javax.swing.JFrame {
                 addYearMouseClicked(evt);
             }
         });
-        jPanel1.add(addYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 200, 64));
-
-        addResults.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        addResults.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Exam_50px.png"))); // NOI18N
-        addResults.setText("All Results");
-        addResults.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addResultsMouseClicked(evt);
-            }
-        });
-        jPanel1.add(addResults, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 200, 64));
+        jPanel1.add(addYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 200, 64));
 
         viewreports.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         viewreports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/reports.png"))); // NOI18N
@@ -146,7 +136,7 @@ public class ViewReports extends javax.swing.JFrame {
                 viewreportsMouseClicked(evt);
             }
         });
-        jPanel1.add(viewreports, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 200, 64));
+        jPanel1.add(viewreports, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 200, 64));
 
         lbaddyear.setBackground(new java.awt.Color(255, 255, 255));
         lbaddyear.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
@@ -161,17 +151,27 @@ public class ViewReports extends javax.swing.JFrame {
                 addYear1MouseClicked(evt);
             }
         });
-        jPanel1.add(addYear1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 200, 64));
+        jPanel1.add(addYear1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 200, 64));
 
         addYear2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addYear2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Student Male_50px.png"))); // NOI18N
-        addYear2.setText("GPA");
+        addYear2.setText("GPA Doc");
         addYear2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addYear2MouseClicked(evt);
             }
         });
-        jPanel1.add(addYear2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 200, 64));
+        jPanel1.add(addYear2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 200, 64));
+
+        addResults.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        addResults.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Exam_50px.png"))); // NOI18N
+        addResults.setText("All Results Doc");
+        addResults.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addResultsMouseClicked(evt);
+            }
+        });
+        jPanel1.add(addResults, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 200, 64));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -273,7 +273,7 @@ public class ViewReports extends javax.swing.JFrame {
     }//GEN-LAST:event_addYearMouseClicked
 
     private void addResultsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addResultsMouseClicked
-        InputStream resourceAsStream = getClass().getResourceAsStream("/reports/results.jasper");
+        InputStream resourceAsStream = getClass().getResourceAsStream("/reports/Simple_Blue.jasper");
         HashMap map = new HashMap();
         JasperPrint jasperPrint;
         try {

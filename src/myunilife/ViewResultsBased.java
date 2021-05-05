@@ -355,8 +355,7 @@ public class ViewResultsBased extends javax.swing.JFrame {
 
             if((semid != 0) && (yid != 0)){
                 //JOptionPane.showMessageDialog(null,"Asini");
-                this.dispose();               
-                
+                                            
                 InputStream resourceAsStream = getClass().getResourceAsStream("/reports/Simple_Blue.jasper");
                 HashMap map = new HashMap();
                 map.put("Parameter", yid);
