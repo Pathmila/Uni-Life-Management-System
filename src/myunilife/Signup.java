@@ -220,11 +220,9 @@ public class Signup extends javax.swing.JFrame {
                             .addComponent(txtuni, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbyear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(45, 45, 45))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbyear7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtdegree, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lbyear7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtdegree, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(1, 1, 1)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtregisterno, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -302,6 +300,42 @@ public class Signup extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        dispose();
+    }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void txtdegreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdegreeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtdegreeActionPerformed
+
+    private void enterpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterpasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enterpasswordActionPerformed
+
+    private void cpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cpasswordActionPerformed
+
+    private void txtunameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtunameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtunameActionPerformed
+
+    private void txtindexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtindexActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtindexActionPerformed
+
+    private void txtregisternoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtregisternoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtregisternoActionPerformed
+
+    private void txtuniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtuniActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtuniActionPerformed
+
+    private void txtnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnameActionPerformed
+
     private void btnsignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsignupActionPerformed
         int semid=0;
         int yid=0;
@@ -313,15 +347,14 @@ public class Signup extends javax.swing.JFrame {
             String index = txtindex.getText();
             char[] password = enterpassword.getPassword();
             char[] confirmpassword = cpassword.getPassword();
-            
+
             Validation validation = new Validation();
             boolean result = validation.validPassword(password,confirmpassword);
-            
+
             if(result){
                 SimpleMD5Example simpleMD5Example = new SimpleMD5Example();
                 String md5 = simpleMD5Example.getHash(password);
-                
-                
+
                 String sql = "insert into mydetails (username,password,name,university,degree,registrationno,indexno) values(?,?,?,?,?,?,?)";
                 PreparedStatement pst= con.prepareStatement(sql);
                 pst.setString(1, (String)txtuname.getText());
@@ -329,15 +362,13 @@ public class Signup extends javax.swing.JFrame {
                 pst.setString(3, (String)txtname.getText());
                 pst.setString(4, (String)txtuni.getText());
                 pst.setString(5, (String)txtdegree.getText());
-                pst.setString(6, (String)txtregisterno.getText());           
+                pst.setString(6, (String)txtregisterno.getText());
                 pst.setInt(7, Integer.parseInt(index));
-                
-                
 
                 int update = pst.executeUpdate();
 
                 if(update == 1){
-                    //JOptionPane.showMessageDialog(null,"Insert is sucess");                
+                    //JOptionPane.showMessageDialog(null,"Insert is sucess");
                     Home home = new Home(username);
                     home.setVisible(true);
                     dispose();
@@ -345,8 +376,7 @@ public class Signup extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null,"Insert is failed");
                 }
             }
-            
-            
+
             con.close();
             //dispose();
             //Dashboard dashboard = new Dashboard(adminName);
@@ -355,42 +385,6 @@ public class Signup extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_btnsignupActionPerformed
-
-    private void txtnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtnameActionPerformed
-
-    private void txtuniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtuniActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtuniActionPerformed
-
-    private void txtregisternoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtregisternoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtregisternoActionPerformed
-
-    private void txtindexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtindexActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtindexActionPerformed
-
-    private void txtunameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtunameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtunameActionPerformed
-
-    private void cpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cpasswordActionPerformed
-
-    private void enterpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterpasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_enterpasswordActionPerformed
-
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        dispose();
-    }//GEN-LAST:event_jLabel6MouseClicked
-
-    private void txtdegreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdegreeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtdegreeActionPerformed
 
     /**
      * @param args the command line arguments
