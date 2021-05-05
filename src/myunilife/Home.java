@@ -102,221 +102,249 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel9 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        lbuname = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        addYear = new javax.swing.JLabel();
-        addSemester = new javax.swing.JLabel();
-        addSubject = new javax.swing.JLabel();
-        addResults = new javax.swing.JLabel();
-        viewreports = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        addYear1 = new javax.swing.JLabel();
+        addSemester1 = new javax.swing.JLabel();
+        addSubject1 = new javax.swing.JLabel();
+        addResults1 = new javax.swing.JLabel();
+        viewreports1 = new javax.swing.JLabel();
+        viewsubject1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         txtGPA = new javax.swing.JLabel();
-        viewsubject = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lbuname = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
-        jPanel9.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel4.setBackground(new java.awt.Color(153, 255, 255));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
+        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
 
-        jPanel8.setBackground(new java.awt.Color(0, 0, 153));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel5.setFont(new java.awt.Font("Lucida Bright", 1, 36)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("My Uni Life");
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Close Window.png"))); // NOI18N
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Close Window.png"))); // NOI18N
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
+                jLabel7MouseClicked(evt);
             }
         });
 
-        lbuname.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        lbuname.setForeground(new java.awt.Color(255, 255, 255));
-        lbuname.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setFont(new java.awt.Font("Monotype Corsiva", 1, 48)); // NOI18N
+        jLabel2.setText("My Uni Life");
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(lbuname, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(131, 131, 131)
-                .addComponent(jLabel6)
-                .addGap(36, 36, 36))
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(lbuname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5)))
-                .addContainerGap(30, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/pharm2018-03-278219841.jpg"))); // NOI18N
 
-        jPanel9.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 120));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        addYear.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        addYear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Plus 1 Year_48px.png"))); // NOI18N
-        addYear.setText("Add Year");
-        addYear.addMouseListener(new java.awt.event.MouseAdapter() {
+        addYear1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        addYear1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Plus 1 Year_48px.png"))); // NOI18N
+        addYear1.setText("Add Year");
+        addYear1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addYearMouseClicked(evt);
+                addYear1MouseClicked(evt);
             }
         });
-        jPanel1.add(addYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 170, 64));
+        jPanel2.add(addYear1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 170, 64));
 
-        addSemester.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        addSemester.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/semester.png"))); // NOI18N
-        addSemester.setText("Add Semester");
-        addSemester.addMouseListener(new java.awt.event.MouseAdapter() {
+        addSemester1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        addSemester1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/semester.png"))); // NOI18N
+        addSemester1.setText("Add Semester");
+        addSemester1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addSemesterMouseClicked(evt);
+                addSemester1MouseClicked(evt);
             }
         });
-        jPanel1.add(addSemester, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 170, 64));
+        jPanel2.add(addSemester1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 170, 64));
 
-        addSubject.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        addSubject.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/subject.png"))); // NOI18N
-        addSubject.setText("Add Subject");
-        addSubject.addMouseListener(new java.awt.event.MouseAdapter() {
+        addSubject1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        addSubject1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/subject.png"))); // NOI18N
+        addSubject1.setText("Add Subject");
+        addSubject1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addSubjectMouseClicked(evt);
+                addSubject1MouseClicked(evt);
             }
         });
-        jPanel1.add(addSubject, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 170, 64));
+        jPanel2.add(addSubject1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 170, 64));
 
-        addResults.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        addResults.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Exam_50px.png"))); // NOI18N
-        addResults.setText("Add Results");
-        addResults.addMouseListener(new java.awt.event.MouseAdapter() {
+        addResults1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        addResults1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Exam_50px.png"))); // NOI18N
+        addResults1.setText("Add Results");
+        addResults1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addResultsMouseClicked(evt);
+                addResults1MouseClicked(evt);
             }
         });
-        jPanel1.add(addResults, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 170, 64));
+        jPanel2.add(addResults1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 170, 64));
 
-        viewreports.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        viewreports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/reports.png"))); // NOI18N
-        viewreports.setText("View Reports");
-        viewreports.addMouseListener(new java.awt.event.MouseAdapter() {
+        viewreports1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewreports1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/reports.png"))); // NOI18N
+        viewreports1.setText("View Reports");
+        viewreports1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                viewreportsMouseClicked(evt);
+                viewreports1MouseClicked(evt);
             }
         });
-        jPanel1.add(viewreports, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, 170, 64));
+        jPanel2.add(viewreports1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, 170, 64));
+
+        viewsubject1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewsubject1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Eye_50px.png"))); // NOI18N
+        viewsubject1.setText("View Subjects");
+        viewsubject1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                viewsubject1MouseClicked(evt);
+            }
+        });
+        jPanel2.add(viewsubject1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 170, 64));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("GPA");
 
         txtGPA.setBackground(new java.awt.Color(102, 255, 204));
         txtGPA.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        txtGPA.setForeground(new java.awt.Color(0, 0, 153));
         txtGPA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtGPA.setAlignmentX(0.5F);
         txtGPA.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(txtGPA, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 200, 60));
 
-        viewsubject.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        viewsubject.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Eye_50px.png"))); // NOI18N
-        viewsubject.setText("View Subjects");
-        viewsubject.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                viewsubjectMouseClicked(evt);
-            }
-        });
-        jPanel1.add(viewsubject, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 170, 64));
+        lbuname.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lbuname.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("GPA");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, -1, -1));
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(107, 107, 107)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lbuname, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(jLabel7)
+                .addGap(22, 22, 22))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(jLabel4)
+                        .addGap(38, 38, 38)
+                        .addComponent(txtGPA, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(lbuname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(69, 69, 69)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(62, 62, 62)
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtGPA, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGap(8, 8, 8)
+                                        .addComponent(jLabel4)))))))
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
 
-        jPanel9.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 590, 400));
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void viewsubjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewsubjectMouseClicked
-       String uname = lbuname.getText();
-        ViewSubject viewSubject = new ViewSubject(uname);
-        viewSubject.setVisible(true);
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         dispose();
-    }//GEN-LAST:event_viewsubjectMouseClicked
+    }//GEN-LAST:event_jLabel7MouseClicked
 
-    private void addResultsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addResultsMouseClicked
-        String uname = lbuname.getText();
-        SearchSubject searchResults = new SearchSubject(uname);
-        searchResults.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_addResultsMouseClicked
-
-    private void addSubjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addSubjectMouseClicked
-        String uname = lbuname.getText();
-        AddSubject addsubject = new AddSubject(uname);
-        addsubject.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_addSubjectMouseClicked
-
-    private void addSemesterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addSemesterMouseClicked
-        String uname = lbuname.getText();
-        AddSemester addSemester = new AddSemester(uname);
-        addSemester.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_addSemesterMouseClicked
-
-    private void addYearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addYearMouseClicked
-        String uname = lbuname.getText();
+    private void addYear1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addYear1MouseClicked
+        String uname = lbuname.getText();          
         AddYear addYear = new AddYear(uname);
         addYear.setVisible(true);
         dispose();
-    }//GEN-LAST:event_addYearMouseClicked
+    }//GEN-LAST:event_addYear1MouseClicked
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+    private void addSemester1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addSemester1MouseClicked
+        String uname = lbuname.getText();          
+        AddSemester addSemester = new AddSemester(uname);
+        addSemester.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jLabel6MouseClicked
+    }//GEN-LAST:event_addSemester1MouseClicked
 
-    private void viewreportsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewreportsMouseClicked
-        String uname = lbuname.getText();
-        ViewReports viewReports = new ViewReports(GPA,degree,uname);
+    private void addSubject1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addSubject1MouseClicked
+        String uname = lbuname.getText();          
+        AddSubject addSubject = new AddSubject(uname);
+        addSubject.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_addSubject1MouseClicked
+
+    private void addResults1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addResults1MouseClicked
+        String uname = lbuname.getText();          
+        SearchSubject searchSubject = new SearchSubject(uname);
+        searchSubject.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_addResults1MouseClicked
+
+    private void viewreports1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewreports1MouseClicked
+        String uname = lbuname.getText();          
+        ViewReports viewReports = new ViewReports(GPA, degree ,uname);
         viewReports.setVisible(true);
         dispose();
-    }//GEN-LAST:event_viewreportsMouseClicked
+    }//GEN-LAST:event_viewreports1MouseClicked
+
+    private void viewsubject1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewsubject1MouseClicked
+        String uname = lbuname.getText();          
+        ViewSubject viewSubject = new ViewSubject(uname);
+        viewSubject.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_viewsubject1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -355,19 +383,20 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel addResults;
-    private javax.swing.JLabel addSemester;
-    private javax.swing.JLabel addSubject;
-    private javax.swing.JLabel addYear;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
+    private javax.swing.JLabel addResults1;
+    private javax.swing.JLabel addSemester1;
+    private javax.swing.JLabel addSubject1;
+    private javax.swing.JLabel addYear1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lbuname;
     private javax.swing.JLabel txtGPA;
-    private javax.swing.JLabel viewreports;
-    private javax.swing.JLabel viewsubject;
+    private javax.swing.JLabel viewreports1;
+    private javax.swing.JLabel viewsubject1;
     // End of variables declaration//GEN-END:variables
 }
