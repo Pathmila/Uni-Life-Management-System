@@ -42,7 +42,6 @@ public class Signup extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         lbyear = new javax.swing.JLabel();
         btnsignup = new javax.swing.JButton();
-        lbaddyear = new javax.swing.JLabel();
         lbyear1 = new javax.swing.JLabel();
         lbyear2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -57,6 +56,9 @@ public class Signup extends javax.swing.JFrame {
         txtuname = new javax.swing.JTextField();
         cpassword = new javax.swing.JPasswordField();
         enterpassword = new javax.swing.JPasswordField();
+        txtdegree = new javax.swing.JTextField();
+        lbyear7 = new javax.swing.JLabel();
+        lbaddyear = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -68,13 +70,11 @@ public class Signup extends javax.swing.JFrame {
         jPanel4.setForeground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbyear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lbyear.setText("University");
-        jPanel3.add(lbyear, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, 40));
 
         btnsignup.setBackground(new java.awt.Color(0, 0, 153));
         btnsignup.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -86,90 +86,171 @@ public class Signup extends javax.swing.JFrame {
                 btnsignupActionPerformed(evt);
             }
         });
-        jPanel3.add(btnsignup, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 80, 30));
-
-        lbaddyear.setBackground(new java.awt.Color(255, 255, 255));
-        lbaddyear.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        lbaddyear.setText("Sign up");
-        jPanel3.add(lbaddyear, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, -1, 60));
 
         lbyear1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lbyear1.setText("Name");
-        jPanel3.add(lbyear1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, 40));
 
         lbyear2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lbyear2.setText("Confirm Password");
-        jPanel3.add(lbyear2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, 40));
 
         jTextField1.setText("jTextField1");
-        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(848, 1, -1, -1));
 
         lbyear3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lbyear3.setText("Registration No");
-        jPanel3.add(lbyear3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, 40));
 
         lbyear4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lbyear4.setText("Index No");
-        jPanel3.add(lbyear4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, 40));
 
         lbyear5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lbyear5.setText("Username");
-        jPanel3.add(lbyear5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, 40));
 
         lbyear6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lbyear6.setText("Password");
-        jPanel3.add(lbyear6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, 40));
 
         txtname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtnameActionPerformed(evt);
             }
         });
-        jPanel3.add(txtname, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 130, 30));
 
         txtuni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtuniActionPerformed(evt);
             }
         });
-        jPanel3.add(txtuni, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 130, 30));
 
         txtregisterno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtregisternoActionPerformed(evt);
             }
         });
-        jPanel3.add(txtregisterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 130, 30));
 
         txtindex.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtindexActionPerformed(evt);
             }
         });
-        jPanel3.add(txtindex, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 130, 30));
 
         txtuname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtunameActionPerformed(evt);
             }
         });
-        jPanel3.add(txtuname, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 130, 30));
 
         cpassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cpasswordActionPerformed(evt);
             }
         });
-        jPanel3.add(cpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 130, 30));
 
         enterpassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enterpasswordActionPerformed(evt);
             }
         });
-        jPanel3.add(enterpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 130, 30));
 
-        jPanel4.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 320, 400));
+        txtdegree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtdegreeActionPerformed(evt);
+            }
+        });
+
+        lbyear7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbyear7.setText("Degree");
+
+        lbaddyear.setBackground(new java.awt.Color(255, 255, 255));
+        lbaddyear.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        lbaddyear.setText("Sign up");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(183, 183, 183)
+                        .addComponent(lbaddyear)
+                        .addGap(538, 538, 538)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbyear)
+                            .addComponent(lbyear1)
+                            .addComponent(lbyear7)
+                            .addComponent(lbyear3)
+                            .addComponent(lbyear4)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(lbyear6)
+                                .addComponent(lbyear5))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(lbyear2)))
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnsignup, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtname)
+                                .addComponent(txtuni)
+                                .addComponent(txtdegree)
+                                .addComponent(txtregisterno)
+                                .addComponent(txtindex)
+                                .addComponent(txtuname)
+                                .addComponent(enterpassword)
+                                .addComponent(cpassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbaddyear, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbyear1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtuni, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbyear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(45, 45, 45))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbyear7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtdegree, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(1, 1, 1)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtregisterno, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbyear3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtindex, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbyear4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtuname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbyear5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(enterpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbyear6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbyear2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addComponent(btnsignup, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
+        );
+
+        jPanel4.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 490, 540));
 
         jPanel5.setBackground(new java.awt.Color(0, 0, 153));
 
@@ -189,9 +270,9 @@ public class Signup extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(215, 215, 215)
+                .addContainerGap(299, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
+                .addGap(215, 215, 215)
                 .addComponent(jLabel6)
                 .addGap(36, 36, 36))
         );
@@ -205,27 +286,17 @@ public class Signup extends javax.swing.JFrame {
                 .addGap(38, 38, 38))
         );
 
-        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 120));
+        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 120));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
         );
 
         pack();
@@ -257,7 +328,7 @@ public class Signup extends javax.swing.JFrame {
                 pst.setString(2, md5);
                 pst.setString(3, (String)txtname.getText());
                 pst.setString(4, (String)txtuni.getText());
-                pst.setString(5, (String)txtregisterno.getText());
+                pst.setString(5, (String)txtdegree.getText());
                 pst.setString(6, (String)txtregisterno.getText());           
                 pst.setInt(7, Integer.parseInt(index));
                 
@@ -317,6 +388,10 @@ public class Signup extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
 
+    private void txtdegreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdegreeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtdegreeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -370,6 +445,8 @@ public class Signup extends javax.swing.JFrame {
     private javax.swing.JLabel lbyear4;
     private javax.swing.JLabel lbyear5;
     private javax.swing.JLabel lbyear6;
+    private javax.swing.JLabel lbyear7;
+    private javax.swing.JTextField txtdegree;
     private javax.swing.JTextField txtindex;
     private javax.swing.JTextField txtname;
     private javax.swing.JTextField txtregisterno;
