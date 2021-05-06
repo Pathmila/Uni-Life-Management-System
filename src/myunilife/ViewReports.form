@@ -99,6 +99,8 @@
                       <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="lbuname" min="-2" pref="77" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
@@ -139,6 +141,7 @@
                                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                                       <Component id="lbuname" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
                                       <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel9" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel7" alignment="1" min="-2" pref="40" max="-2" attributes="0"/>
                               </Group>
@@ -362,6 +365,13 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JLabel" name="jLabel9">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/icon/User_40px.png"/>
+                </Property>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>

@@ -101,6 +101,7 @@ public class ViewResultsBased extends javax.swing.JFrame {
         lbyear1 = new javax.swing.JLabel();
         jComboBoxyear = new javax.swing.JComboBox<>();
         jTextField1 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -234,6 +235,8 @@ public class ViewResultsBased extends javax.swing.JFrame {
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/User_40px.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -244,6 +247,8 @@ public class ViewResultsBased extends javax.swing.JFrame {
                         .addGap(107, 107, 107)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lbuname, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
                         .addComponent(jLabel8))
@@ -275,7 +280,8 @@ public class ViewResultsBased extends javax.swing.JFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(lbuname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel8))
+                                .addComponent(jLabel8)
+                                .addComponent(jLabel9))
                             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
@@ -431,21 +437,64 @@ public class ViewResultsBased extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnadd;
+    private javax.swing.JButton btnsignup;
+    private javax.swing.JButton btnsignup1;
+    private javax.swing.JButton btnsignup2;
+    private javax.swing.JPasswordField enterpassword4;
+    private javax.swing.JPasswordField enterpassword5;
+    private javax.swing.JPasswordField enterpassword6;
     private javax.swing.JComboBox<String> jComboBoxsemster;
     private javax.swing.JComboBox<String> jComboBoxyear;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lbaddyear;
+    private javax.swing.JLabel lbaddyear5;
+    private javax.swing.JLabel lbaddyear6;
+    private javax.swing.JLabel lbaddyear7;
     private javax.swing.JLabel lbuname;
     private javax.swing.JLabel lbyear;
     private javax.swing.JLabel lbyear1;
+    private javax.swing.JLabel lbyear17;
+    private javax.swing.JLabel lbyear18;
+    private javax.swing.JLabel lbyear19;
+    private javax.swing.JLabel lbyear20;
+    private javax.swing.JLabel lbyear21;
+    private javax.swing.JLabel lbyear22;
+    private javax.swing.JLabel lbyear23;
+    private javax.swing.JLabel lbyear24;
+    private javax.swing.JLabel lbyear25;
+    private javax.swing.JLabel lbyear26;
+    private javax.swing.JLabel lbyear27;
+    private javax.swing.JLabel lbyear28;
     private javax.swing.JLabel txtGPA;
+    private javax.swing.JTextField txtuname5;
+    private javax.swing.JTextField txtuname6;
+    private javax.swing.JTextField txtuname7;
     // End of variables declaration//GEN-END:variables
 }

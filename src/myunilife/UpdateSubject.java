@@ -77,8 +77,8 @@ public class UpdateSubject extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        txtGPA5 = new javax.swing.JLabel();
-        lbuname5 = new javax.swing.JLabel();
+        txtGPA = new javax.swing.JLabel();
+        lbuname = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         lbyear = new javax.swing.JLabel();
@@ -94,6 +94,7 @@ public class UpdateSubject extends javax.swing.JFrame {
         nyear = new javax.swing.JSpinner();
         nsemester = new javax.swing.JSpinner();
         ncredits = new javax.swing.JSpinner();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -128,14 +129,14 @@ public class UpdateSubject extends javax.swing.JFrame {
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel31.setText("GPA");
 
-        txtGPA5.setBackground(new java.awt.Color(102, 255, 204));
-        txtGPA5.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        txtGPA5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtGPA5.setAlignmentX(0.5F);
-        txtGPA5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        txtGPA.setBackground(new java.awt.Color(102, 255, 204));
+        txtGPA.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        txtGPA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtGPA.setAlignmentX(0.5F);
+        txtGPA.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        lbuname5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        lbuname5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbuname.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lbuname.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home_30px.png"))); // NOI18N
         jLabel32.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -267,6 +268,8 @@ public class UpdateSubject extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/User_40px.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
         jPanel21Layout.setHorizontalGroup(
@@ -275,7 +278,9 @@ public class UpdateSubject extends javax.swing.JFrame {
                 .addGap(107, 107, 107)
                 .addComponent(jLabel29)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbuname5, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbuname, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(jLabel32)
                 .addGap(18, 18, 18)
@@ -287,7 +292,7 @@ public class UpdateSubject extends javax.swing.JFrame {
                         .addGap(79, 79, 79)
                         .addComponent(jLabel31)
                         .addGap(38, 38, 38)
-                        .addComponent(txtGPA5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtGPA, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel21Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addComponent(jLabel30)))
@@ -306,8 +311,9 @@ public class UpdateSubject extends javax.swing.JFrame {
                         .addGap(24, 24, 24)
                         .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(lbuname5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel32))
+                                .addComponent(lbuname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel32)
+                                .addComponent(jLabel9))
                             .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel21Layout.createSequentialGroup()
@@ -315,7 +321,7 @@ public class UpdateSubject extends javax.swing.JFrame {
                         .addComponent(jLabel30)
                         .addGap(24, 24, 24)
                         .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtGPA5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtGPA, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel21Layout.createSequentialGroup()
                                 .addGap(8, 8, 8)
                                 .addComponent(jLabel31))))
@@ -437,98 +443,29 @@ public class UpdateSubject extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnadd;
-    private javax.swing.JButton btnadd1;
-    private javax.swing.JButton btnadd2;
-    private javax.swing.JButton btnadd3;
-    private javax.swing.JButton btnadd4;
     private javax.swing.JButton btnupdate;
-    private javax.swing.JComboBox<String> jComboBoxsemster;
-    private javax.swing.JComboBox<String> jComboBoxsemster1;
-    private javax.swing.JComboBox<String> jComboBoxsemster2;
-    private javax.swing.JComboBox<String> jComboBoxsemster3;
-    private javax.swing.JComboBox<String> jComboBoxsemster4;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lbaddyear;
-    private javax.swing.JLabel lbaddyear1;
-    private javax.swing.JLabel lbaddyear2;
-    private javax.swing.JLabel lbaddyear3;
-    private javax.swing.JLabel lbaddyear4;
-    private javax.swing.JLabel lbaddyear5;
     private javax.swing.JLabel lbuname;
-    private javax.swing.JLabel lbuname1;
-    private javax.swing.JLabel lbuname2;
-    private javax.swing.JLabel lbuname3;
-    private javax.swing.JLabel lbuname4;
-    private javax.swing.JLabel lbuname5;
     private javax.swing.JLabel lbyear;
     private javax.swing.JLabel lbyear1;
     private javax.swing.JLabel lbyear2;
     private javax.swing.JLabel lbyear3;
     private javax.swing.JLabel lbyear4;
-    private javax.swing.JLabel lbyear5;
-    private javax.swing.JLabel lbyear6;
-    private javax.swing.JLabel lbyear7;
-    private javax.swing.JLabel lbyear8;
-    private javax.swing.JLabel lbyear9;
     private javax.swing.JSpinner ncredits;
     private javax.swing.JSpinner nsemester;
     private javax.swing.JSpinner nyear;
     private javax.swing.JLabel txtGPA;
-    private javax.swing.JLabel txtGPA1;
-    private javax.swing.JLabel txtGPA2;
-    private javax.swing.JLabel txtGPA3;
-    private javax.swing.JLabel txtGPA4;
-    private javax.swing.JLabel txtGPA5;
     private javax.swing.JTextField txtcode;
     private javax.swing.JTextField txtsub;
     // End of variables declaration//GEN-END:variables

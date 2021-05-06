@@ -10,6 +10,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 /**
  *
@@ -20,39 +21,49 @@ public class MyProfile extends javax.swing.JFrame {
     /**
      * Creates new form MyProfile
      */
+    float TGPA =0;
+    
     public MyProfile() {
         initComponents();
     }
     
-    public MyProfile(String username) {
+    public MyProfile(String username, float GPA) {
         initComponents();
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         
-        lbuname.setText(username);
         
+        lbuname.setText(username);
+        TGPA=GPA;
+        txtGPA.setText(Double.toString(GPA));
+        
+        txtname.setEditable(false);
+        txtuni.setEditable(false);
+        txtdegree.setEditable(false);
+        txtregisterno.setEditable(false);
+        txtindex.setEditable(false);
+        txtusername.setEditable(false);
         
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/myunilife","root","");
             
-            String sql1 = "select * from mydetails where username = '"+username+"' ";
-            Statement stm1 = con.createStatement();
-            ResultSet rst1 = stm1.executeQuery(sql1);
-            while(rst1.next()){
-                txtname.setText(rst1.getString("name"));
-                txtuni.setText(rst1.getString(""));
-                txtregisterno.setText(rst1.getString(""));
-                txtindex.setText(rst1.getString(""));                              
-                txtuname.setText(rst1.getString("")); 
-            }
-            con.close();
+            String sql3 = "select * from mydetails where username = '"+username+"' " ;
+            Statement stm3 = con.createStatement();
+            ResultSet rst3 = stm3.executeQuery(sql3);
+            while(rst3.next()){
+                txtname.setText(rst3.getString("name"));
+                txtuni.setText(rst3.getString("university"));
+                txtdegree.setText(rst3.getString("degree"));
+                txtregisterno.setText(rst3.getString("registrationno"));
+                txtindex.setText(rst3.getString("indexno"));
+                txtusername.setText(rst3.getString("username"));
+            }                   
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }
         
-        
-     }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -63,175 +74,274 @@ public class MyProfile extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel4 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        lbyear = new javax.swing.JLabel();
-        lbaddyear = new javax.swing.JLabel();
-        lbyear1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        lbyear3 = new javax.swing.JLabel();
-        lbyear4 = new javax.swing.JLabel();
-        lbyear5 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtGPA = new javax.swing.JLabel();
+        lbuname = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
+        lbyear6 = new javax.swing.JLabel();
+        lbaddyear3 = new javax.swing.JLabel();
+        lbyear7 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        lbyear8 = new javax.swing.JLabel();
+        lbyear9 = new javax.swing.JLabel();
+        lbyear10 = new javax.swing.JLabel();
         txtname = new javax.swing.JTextField();
-        txtuni = new javax.swing.JTextField();
+        txtdegree = new javax.swing.JTextField();
         txtregisterno = new javax.swing.JTextField();
         txtindex = new javax.swing.JTextField();
-        txtuname = new javax.swing.JTextField();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        lbuname = new javax.swing.JLabel();
+        txtusername = new javax.swing.JTextField();
+        lbyear11 = new javax.swing.JLabel();
+        txtuni = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
-        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel5.setBackground(new java.awt.Color(153, 255, 255));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
+        jPanel5.setForeground(new java.awt.Color(255, 255, 255));
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        lbyear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lbyear.setText("University");
-        jPanel3.add(lbyear, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, 40));
-
-        lbaddyear.setBackground(new java.awt.Color(255, 255, 255));
-        lbaddyear.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        lbaddyear.setText("My Profile");
-        jPanel3.add(lbaddyear, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, -1, 60));
-
-        lbyear1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lbyear1.setText("Name");
-        jPanel3.add(lbyear1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, 40));
-
-        jTextField1.setText("jTextField1");
-        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(848, 1, -1, -1));
-
-        lbyear3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lbyear3.setText("Registration No");
-        jPanel3.add(lbyear3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, 40));
-
-        lbyear4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lbyear4.setText("Index No");
-        jPanel3.add(lbyear4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, 40));
-
-        lbyear5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lbyear5.setText("Username");
-        jPanel3.add(lbyear5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, 40));
-
-        txtname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtnameActionPerformed(evt);
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Close Window.png"))); // NOI18N
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
             }
         });
-        jPanel3.add(txtname, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 130, 30));
 
-        txtuni.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtuniActionPerformed(evt);
-            }
-        });
-        jPanel3.add(txtuni, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 130, 30));
-
-        txtregisterno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtregisternoActionPerformed(evt);
-            }
-        });
-        jPanel3.add(txtregisterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 130, 30));
-
-        txtindex.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtindexActionPerformed(evt);
-            }
-        });
-        jPanel3.add(txtindex, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 130, 30));
-
-        txtuname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtunameActionPerformed(evt);
-            }
-        });
-        jPanel3.add(txtuname, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 130, 30));
-
-        jPanel4.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 320, 300));
-
-        jPanel5.setBackground(new java.awt.Color(0, 0, 153));
-
-        jLabel2.setFont(new java.awt.Font("Lucida Bright", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Monotype Corsiva", 1, 48)); // NOI18N
         jLabel2.setText("My Uni Life");
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Close Window.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/pharm2018-03-278219841.jpg"))); // NOI18N
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("GPA");
+
+        txtGPA.setBackground(new java.awt.Color(102, 255, 204));
+        txtGPA.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        txtGPA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtGPA.setAlignmentX(0.5F);
+        txtGPA.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        lbuname.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lbuname.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home_30px.png"))); // NOI18N
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel6MouseClicked(evt);
             }
         });
 
-        lbuname.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        lbuname.setForeground(new java.awt.Color(255, 255, 255));
-        lbuname.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel12.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lbyear6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbyear6.setText("Degree");
+        jPanel12.add(lbyear6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, 40));
+
+        lbaddyear3.setBackground(new java.awt.Color(255, 255, 255));
+        lbaddyear3.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        lbaddyear3.setText("My Profile");
+        jPanel12.add(lbaddyear3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, -10, -1, 70));
+
+        lbyear7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbyear7.setText("Name");
+        jPanel12.add(lbyear7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, 40));
+
+        jTextField4.setText("jTextField1");
+        jPanel12.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(848, 1, -1, -1));
+
+        lbyear8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbyear8.setText("Registration No");
+        jPanel12.add(lbyear8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, 40));
+
+        lbyear9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbyear9.setText("Index No");
+        jPanel12.add(lbyear9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, 40));
+
+        lbyear10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbyear10.setText("Username");
+        jPanel12.add(lbyear10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, 40));
+
+        txtname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnameActionPerformed(evt);
+            }
+        });
+        jPanel12.add(txtname, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 240, 30));
+
+        txtdegree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtdegreeActionPerformed(evt);
+            }
+        });
+        jPanel12.add(txtdegree, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 240, 30));
+
+        txtregisterno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtregisternoActionPerformed(evt);
+            }
+        });
+        jPanel12.add(txtregisterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 240, 30));
+
+        txtindex.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtindexActionPerformed(evt);
+            }
+        });
+        jPanel12.add(txtindex, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 240, 30));
+
+        txtusername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtusernameActionPerformed(evt);
+            }
+        });
+        jPanel12.add(txtusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 240, 30));
+
+        lbyear11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbyear11.setText("University");
+        jPanel12.add(lbyear11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, 40));
+
+        txtuni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtuniActionPerformed(evt);
+            }
+        });
+        jPanel12.add(txtuni, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 240, 30));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/User_40px.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addGap(107, 107, 107)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbuname, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(jLabel6)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7)
+                .addGap(22, 22, 22))
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(jLabel4)
+                        .addGap(38, 38, 38)
+                        .addComponent(txtGPA, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel3)
+                        .addGap(27, 27, 27)
+                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(52, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addComponent(jLabel2))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(lbuname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel6)
+                                        .addComponent(jLabel9))
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(62, 62, 62)
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtGPA, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(jLabel4)))
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(lbuname, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addGap(36, 36, 36))
+                .addContainerGap()
+                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lbuname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(38, 38, 38))
+                .addContainerGap()
+                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
-
-        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 120));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
+            .addGap(0, 1008, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        dispose();
+    }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        String uname = lbuname.getText();
+        Home home = new Home(uname);
+        home.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jLabel6MouseClicked
+
     private void txtnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtnameActionPerformed
 
-    private void txtuniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtuniActionPerformed
+    private void txtdegreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdegreeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtuniActionPerformed
+    }//GEN-LAST:event_txtdegreeActionPerformed
 
     private void txtregisternoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtregisternoActionPerformed
         // TODO add your handling code here:
@@ -241,13 +351,13 @@ public class MyProfile extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtindexActionPerformed
 
-    private void txtunameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtunameActionPerformed
+    private void txtusernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtunameActionPerformed
+    }//GEN-LAST:event_txtusernameActionPerformed
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        dispose();
-    }//GEN-LAST:event_jLabel6MouseClicked
+    private void txtuniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtuniActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtuniActionPerformed
 
     /**
      * @param args the command line arguments
@@ -286,22 +396,29 @@ public class MyProfile extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel lbaddyear;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel lbaddyear3;
     private javax.swing.JLabel lbuname;
-    private javax.swing.JLabel lbyear;
-    private javax.swing.JLabel lbyear1;
-    private javax.swing.JLabel lbyear3;
-    private javax.swing.JLabel lbyear4;
-    private javax.swing.JLabel lbyear5;
+    private javax.swing.JLabel lbyear10;
+    private javax.swing.JLabel lbyear11;
+    private javax.swing.JLabel lbyear6;
+    private javax.swing.JLabel lbyear7;
+    private javax.swing.JLabel lbyear8;
+    private javax.swing.JLabel lbyear9;
+    private javax.swing.JLabel txtGPA;
+    private javax.swing.JTextField txtdegree;
     private javax.swing.JTextField txtindex;
     private javax.swing.JTextField txtname;
     private javax.swing.JTextField txtregisterno;
-    private javax.swing.JTextField txtuname;
     private javax.swing.JTextField txtuni;
+    private javax.swing.JTextField txtusername;
     // End of variables declaration//GEN-END:variables
 }
