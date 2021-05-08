@@ -66,11 +66,11 @@ public class ViewReports extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         addYear = new javax.swing.JLabel();
-        viewreports = new javax.swing.JLabel();
+        SemesterResults = new javax.swing.JLabel();
         lbaddyear = new javax.swing.JLabel();
         addYear1 = new javax.swing.JLabel();
-        addYear2 = new javax.swing.JLabel();
-        addResults = new javax.swing.JLabel();
+        GPA = new javax.swing.JLabel();
+        allResults = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -129,15 +129,15 @@ public class ViewReports extends javax.swing.JFrame {
         });
         jPanel1.add(addYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 200, 64));
 
-        viewreports.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        viewreports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/reports.png"))); // NOI18N
-        viewreports.setText("Semester Results");
-        viewreports.addMouseListener(new java.awt.event.MouseAdapter() {
+        SemesterResults.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        SemesterResults.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/reports.png"))); // NOI18N
+        SemesterResults.setText("Semester Results");
+        SemesterResults.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                viewreportsMouseClicked(evt);
+                SemesterResultsMouseClicked(evt);
             }
         });
-        jPanel1.add(viewreports, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 200, 64));
+        jPanel1.add(SemesterResults, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 200, 64));
 
         lbaddyear.setBackground(new java.awt.Color(255, 255, 255));
         lbaddyear.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
@@ -154,25 +154,25 @@ public class ViewReports extends javax.swing.JFrame {
         });
         jPanel1.add(addYear1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 200, 64));
 
-        addYear2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        addYear2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Student Male_50px.png"))); // NOI18N
-        addYear2.setText("GPA Doc");
-        addYear2.addMouseListener(new java.awt.event.MouseAdapter() {
+        GPA.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        GPA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Student Male_50px.png"))); // NOI18N
+        GPA.setText("GPA");
+        GPA.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addYear2MouseClicked(evt);
+                GPAMouseClicked(evt);
             }
         });
-        jPanel1.add(addYear2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 200, 64));
+        jPanel1.add(GPA, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 200, 64));
 
-        addResults.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        addResults.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Exam_50px.png"))); // NOI18N
-        addResults.setText("All Results Doc");
-        addResults.addMouseListener(new java.awt.event.MouseAdapter() {
+        allResults.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        allResults.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Exam_50px.png"))); // NOI18N
+        allResults.setText("All Results Doc");
+        allResults.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addResultsMouseClicked(evt);
+                allResultsMouseClicked(evt);
             }
         });
-        jPanel1.add(addResults, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 200, 64));
+        jPanel1.add(allResults, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 200, 64));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/User_40px.png"))); // NOI18N
 
@@ -278,7 +278,7 @@ public class ViewReports extends javax.swing.JFrame {
 
     }//GEN-LAST:event_addYearMouseClicked
 
-    private void addResultsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addResultsMouseClicked
+    private void allResultsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_allResultsMouseClicked
         InputStream resourceAsStream = getClass().getResourceAsStream("/reports/Simple_Blue.jasper");
         HashMap map = new HashMap();
         JasperPrint jasperPrint;
@@ -295,22 +295,25 @@ public class ViewReports extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(ViewReports.class.getName()).log(Level.SEVERE, null, ex);
         } 
-    }//GEN-LAST:event_addResultsMouseClicked
+    }//GEN-LAST:event_allResultsMouseClicked
 
-    private void viewreportsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewreportsMouseClicked
+    private void SemesterResultsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SemesterResultsMouseClicked
         String uname = lbuname.getText();
         SemesterResults semesterResults  = new SemesterResults (TGPA,uname);
         semesterResults.setVisible(true);
         dispose();
-    }//GEN-LAST:event_viewreportsMouseClicked
+    }//GEN-LAST:event_SemesterResultsMouseClicked
 
     private void addYear1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addYear1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_addYear1MouseClicked
 
-    private void addYear2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addYear2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addYear2MouseClicked
+    private void GPAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GPAMouseClicked
+        String uname = lbuname.getText();
+        ReportGPA reportGPA  = new ReportGPA (TGPA,uname);
+        reportGPA.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_GPAMouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         dispose();
@@ -359,10 +362,11 @@ public class ViewReports extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel addResults;
+    private javax.swing.JLabel GPA;
+    private javax.swing.JLabel SemesterResults;
     private javax.swing.JLabel addYear;
     private javax.swing.JLabel addYear1;
-    private javax.swing.JLabel addYear2;
+    private javax.swing.JLabel allResults;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -375,6 +379,5 @@ public class ViewReports extends javax.swing.JFrame {
     private javax.swing.JLabel lbaddyear;
     private javax.swing.JLabel lbuname;
     private javax.swing.JLabel txtGPA;
-    private javax.swing.JLabel viewreports;
     // End of variables declaration//GEN-END:variables
 }
