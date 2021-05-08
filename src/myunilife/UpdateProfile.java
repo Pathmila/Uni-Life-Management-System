@@ -7,6 +7,7 @@ package myunilife;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
@@ -22,6 +23,7 @@ public class UpdateProfile extends javax.swing.JFrame {
      * Creates new form UpdateProfile
      */
     float TGPA =0;
+    String user;
     
     public UpdateProfile() {
         initComponents();
@@ -32,17 +34,10 @@ public class UpdateProfile extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         
-        
+        user=username;
         lbuname.setText(username);
         TGPA=GPA;
         txtGPA.setText(Double.toString(GPA));
-        
-        txtname.setEditable(false);
-        txtuni.setEditable(false);
-        txtdegree.setEditable(false);
-        txtregisterno.setEditable(false);
-        txtindex.setEditable(false);
-        txtusername.setEditable(false);
         
         try{
             Class.forName("com.mysql.jdbc.Driver");
@@ -97,9 +92,12 @@ public class UpdateProfile extends javax.swing.JFrame {
         txtusername = new javax.swing.JTextField();
         lbyear11 = new javax.swing.JLabel();
         txtuni = new javax.swing.JTextField();
+        btnupdate = new javax.swing.JButton();
+        btndelete = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel5.setBackground(new java.awt.Color(153, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
@@ -150,8 +148,8 @@ public class UpdateProfile extends javax.swing.JFrame {
 
         lbaddyear3.setBackground(new java.awt.Color(255, 255, 255));
         lbaddyear3.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        lbaddyear3.setText("My Profile");
-        jPanel12.add(lbaddyear3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, -10, -1, 70));
+        lbaddyear3.setText("Update Profile");
+        jPanel12.add(lbaddyear3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, -10, -1, 70));
 
         lbyear7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lbyear7.setText("Name");
@@ -217,6 +215,30 @@ public class UpdateProfile extends javax.swing.JFrame {
             }
         });
         jPanel12.add(txtuni, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 240, 30));
+
+        btnupdate.setBackground(new java.awt.Color(0, 0, 153));
+        btnupdate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnupdate.setForeground(new java.awt.Color(255, 255, 255));
+        btnupdate.setText("Update");
+        btnupdate.setBorder(null);
+        btnupdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnupdateActionPerformed(evt);
+            }
+        });
+        jPanel12.add(btnupdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 80, 30));
+
+        btndelete.setBackground(new java.awt.Color(0, 0, 153));
+        btndelete.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btndelete.setForeground(new java.awt.Color(255, 255, 255));
+        btndelete.setText("Delete");
+        btndelete.setBorder(null);
+        btndelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btndeleteActionPerformed(evt);
+            }
+        });
+        jPanel12.add(btndelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, 80, 30));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/User_40px.png"))); // NOI18N
 
@@ -357,6 +379,44 @@ public class UpdateProfile extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtuniActionPerformed
 
+    private void btnupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnupdateActionPerformed
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/myunilife","root","");
+
+            String sql = "update mydetails set name=? , university=? , degree=? , registrationno=? , indexno=? , username=? where username='"+user+"'";
+            PreparedStatement pst= con.prepareStatement(sql);
+            pst.setString(1, (String)txtname.getText());
+            pst.setString(2, (String)txtuni.getText());
+            pst.setString(3, (String)txtdegree.getText());
+            pst.setString(4, (String)txtregisterno.getText());
+            pst.setString(5, (String)txtindex.getText());
+            pst.setString(6, (String)txtusername.getText());
+
+            int update = pst.executeUpdate();
+
+            if(update == 1){
+                JOptionPane.showMessageDialog(null,"Update is sucess");
+                String uname = txtusername.getText();
+                Home home = new Home(uname);
+                home.setVisible(true);
+                dispose();
+            }else{
+                JOptionPane.showMessageDialog(null,"Update is failed");
+            }
+            con.close();
+            //dispose();
+            //Dashboard dashboard = new Dashboard(adminName);
+            //dashboard.setVisible(true);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_btnupdateActionPerformed
+
+    private void btndeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeleteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btndeleteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -393,6 +453,8 @@ public class UpdateProfile extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btndelete;
+    private javax.swing.JButton btnupdate;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
