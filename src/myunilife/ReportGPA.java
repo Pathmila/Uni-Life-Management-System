@@ -34,7 +34,7 @@ public class ReportGPA extends javax.swing.JFrame {
      * Creates new form ReportGPA
      */
     float TGPA =0;
-    String MyDegree ="";
+    String degree;
     
     public ReportGPA() {
         initComponents();
@@ -42,18 +42,27 @@ public class ReportGPA extends javax.swing.JFrame {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);       
     }
     
-    public ReportGPA(float GPA, String degree, String username) {
+    public ReportGPA(float GPA, String username) {
         initComponents();
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         
         lbuname.setText(username);
         TGPA=GPA;
-        MyDegree = degree;
+        
         txtGPA.setText(Double.toString(GPA));
-        txtdegree.setText(MyDegree);
         
+        if((GPA > 3.70) || (GPA == 3.70)){
+            degree = "First Class";
+        }else if((GPA > 3.30) || (GPA == 3.30)){
+            degree = "Second Class (Upper Division)";
+        }else if((GPA > 3.00) || (GPA == 3.00)){
+            degree = "Second Class (Lower Division)";
+        }else{
+            degree = "General Class";
+        }
         
+        txtdegree.setText(degree);
     }
 
     /**
@@ -122,17 +131,17 @@ public class ReportGPA extends javax.swing.JFrame {
         jTextField4.setText("jTextField1");
         jPanel12.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(848, 1, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Degree");
-        jPanel12.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
+        jPanel12.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, -1, -1));
 
         txtGPA.setBackground(new java.awt.Color(102, 255, 204));
-        txtGPA.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        txtGPA.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtGPA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtGPA.setAlignmentX(0.5F);
         txtGPA.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel12.add(txtGPA, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 200, 60));
+        jPanel12.add(txtGPA, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 200, 30));
 
         jButton1.setBackground(new java.awt.Color(0, 0, 153));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -144,29 +153,29 @@ public class ReportGPA extends javax.swing.JFrame {
         });
         jPanel12.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, -1, 40));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("GPA");
-        jPanel12.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
+        jPanel12.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, -1, -1));
 
         txtdegree.setBackground(new java.awt.Color(102, 255, 204));
-        txtdegree.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        txtdegree.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtdegree.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtdegree.setAlignmentX(0.5F);
         txtdegree.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel12.add(txtdegree, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 200, 60));
+        jPanel12.add(txtdegree, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 200, 30));
 
         txtCredits.setBackground(new java.awt.Color(102, 255, 204));
-        txtCredits.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        txtCredits.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtCredits.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtCredits.setAlignmentX(0.5F);
         txtCredits.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel12.add(txtCredits, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 200, 60));
+        jPanel12.add(txtCredits, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 200, 30));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Credits");
-        jPanel12.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, -1));
+        jPanel12.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, -1, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/User_40px.png"))); // NOI18N
 

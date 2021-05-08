@@ -75,7 +75,7 @@ public class Home extends javax.swing.JFrame {
             //JOptionPane.showMessageDialog(null,totCredit);
             //JOptionPane.showMessageDialog(null,totMultiple);
             txtGPA.setText(Double.toString(GPA));
-            
+            /*
             if((GPA > 3.70) || (GPA == 3.70)){
                 degree = "First Class";
             }else if((GPA > 3.30) || (GPA == 3.30)){
@@ -85,7 +85,7 @@ public class Home extends javax.swing.JFrame {
             }else{
                 degree = "General Class";
             }
-            
+            */
             //System.out.println(degree);
             
             con.close();
@@ -350,7 +350,8 @@ public class Home extends javax.swing.JFrame {
 
     private void viewreports1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewreports1MouseClicked
         String uname = lbuname.getText();          
-        ViewReports viewReports = new ViewReports(GPA, degree ,uname);
+        ViewReports viewReports = new ViewReports(GPA,uname);
+        //System.out.println(degree);
         viewReports.setVisible(true);
         dispose();
     }//GEN-LAST:event_viewreports1MouseClicked
