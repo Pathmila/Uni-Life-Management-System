@@ -299,8 +299,8 @@ public class ViewReports extends javax.swing.JFrame {
 
     private void viewreportsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewreportsMouseClicked
         String uname = lbuname.getText();
-        ViewResultsBased viewResultsBased  = new ViewResultsBased (uname,TGPA);
-        viewResultsBased.setVisible(true);
+        SemesterResults semesterResults  = new SemesterResults (TGPA,uname);
+        semesterResults.setVisible(true);
         dispose();
     }//GEN-LAST:event_viewreportsMouseClicked
 
