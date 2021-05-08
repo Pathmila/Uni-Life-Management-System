@@ -63,6 +63,20 @@ public class ReportGPA extends javax.swing.JFrame {
         }
         
         txtdegree.setText(degree);
+        
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/myunilife","root","");
+            
+            String sql3 = "select sum(credit) from subject" ;
+            Statement stm3 = con.createStatement();
+            ResultSet rst3 = stm3.executeQuery(sql3);
+            while(rst3.next()){
+                txtCredits.setText(rst3.getString("sum(credit)"));                
+            }                   
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }
 
     /**
@@ -403,10 +417,10 @@ public class ReportGPA extends javax.swing.JFrame {
         dataset.setValue(C1, "Marks" , "C+" );
         dataset.setValue(C2, "Marks", "C");
         dataset.setValue(C3, "Marks", "C-");
-        dataset.setValue(B3, "Marks", "D+");
-        dataset.setValue(C1, "Marks" , "D" );
-        dataset.setValue(C2, "Marks", "E");
-        dataset.setValue(C3, "Marks", "F");
+        dataset.setValue(D1, "Marks", "D+");
+        dataset.setValue(D2, "Marks" , "D" );
+        dataset.setValue(E, "Marks", "E");
+        dataset.setValue(F, "Marks", "F");
 
         JFreeChart chart = ChartFactory.createBarChart("Student’s Grades", "Grade","No of grades", dataset, PlotOrientation.VERTICAL,false,true,false);
 

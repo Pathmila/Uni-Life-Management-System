@@ -10,54 +10,55 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 /**
  *
- * @author ASUS-Asini Pathmila Silva
+ * @author ASUS
  */
-public class SemesterResults extends javax.swing.JFrame {
+public class UpdateProfile extends javax.swing.JFrame {
 
     /**
-     * Creates new form SemesterResults
+     * Creates new form UpdateProfile
      */
     float TGPA =0;
     
-    public SemesterResults() {
+    public UpdateProfile() {
         initComponents();
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
     
-    public SemesterResults(float GPA, String username) {
+    public UpdateProfile(String username, float GPA) {
         initComponents();
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        
         
         lbuname.setText(username);
         TGPA=GPA;
         txtGPA.setText(Double.toString(GPA));
         
+        txtname.setEditable(false);
+        txtuni.setEditable(false);
+        txtdegree.setEditable(false);
+        txtregisterno.setEditable(false);
+        txtindex.setEditable(false);
+        txtusername.setEditable(false);
+        
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/myunilife","root","");
             
-            String sql = "select year from year" ;
-            Statement stm = con.createStatement();
-            ResultSet rst = stm.executeQuery(sql);
-            while(rst.next()){
-                String year= rst.getString("year");
-                jComboBoxyear.addItem(year);
-            }
-            
-            String sql2 = "select semester from semester" ;
-            Statement stm2 = con.createStatement();
-            ResultSet rst2 = stm2.executeQuery(sql2);
-            while(rst2.next()){
-                String semester= rst2.getString("semester");
-                jComboBoxsemster.addItem(semester);
-            }
-            con.close();
+            String sql3 = "select * from mydetails where username = '"+username+"' " ;
+            Statement stm3 = con.createStatement();
+            ResultSet rst3 = stm3.executeQuery(sql3);
+            while(rst3.next()){
+                txtname.setText(rst3.getString("name"));
+                txtuni.setText(rst3.getString("university"));
+                txtdegree.setText(rst3.getString("degree"));
+                txtregisterno.setText(rst3.getString("registrationno"));
+                txtindex.setText(rst3.getString("indexno"));
+                txtusername.setText(rst3.getString("username"));
+            }                   
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }
@@ -80,19 +81,25 @@ public class SemesterResults extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtGPA = new javax.swing.JLabel();
         lbuname = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        subjecttable = new javax.swing.JTable();
-        lbyear1 = new javax.swing.JLabel();
-        jComboBoxyear = new javax.swing.JComboBox<>();
-        lbyear = new javax.swing.JLabel();
-        jComboBoxsemster = new javax.swing.JComboBox<>();
-        btnadd = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
+        lbyear6 = new javax.swing.JLabel();
+        lbaddyear3 = new javax.swing.JLabel();
+        lbyear7 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        lbyear8 = new javax.swing.JLabel();
+        lbyear9 = new javax.swing.JLabel();
+        lbyear10 = new javax.swing.JLabel();
+        txtname = new javax.swing.JTextField();
+        txtdegree = new javax.swing.JTextField();
+        txtregisterno = new javax.swing.JTextField();
+        txtindex = new javax.swing.JTextField();
+        txtusername = new javax.swing.JTextField();
+        lbyear11 = new javax.swing.JLabel();
+        txtuni = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
 
         jPanel5.setBackground(new java.awt.Color(153, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
@@ -126,106 +133,90 @@ public class SemesterResults extends javax.swing.JFrame {
         lbuname.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbuname.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home_30px.png"))); // NOI18N
-        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home_30px.png"))); // NOI18N
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel8MouseClicked(evt);
+                jLabel6MouseClicked(evt);
             }
         });
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel12.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        subjecttable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 204)));
-        subjecttable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+        lbyear6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbyear6.setText("Degree");
+        jPanel12.add(lbyear6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, 40));
 
-            },
-            new String [] {
-                "Subject", "Code", "Result"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
+        lbaddyear3.setBackground(new java.awt.Color(255, 255, 255));
+        lbaddyear3.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        lbaddyear3.setText("My Profile");
+        jPanel12.add(lbaddyear3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, -10, -1, 70));
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        subjecttable.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        subjecttable.setGridColor(new java.awt.Color(255, 255, 255));
-        jScrollPane1.setViewportView(subjecttable);
+        lbyear7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbyear7.setText("Name");
+        jPanel12.add(lbyear7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, 40));
 
-        lbyear1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lbyear1.setText("Year");
+        jTextField4.setText("jTextField1");
+        jPanel12.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(848, 1, -1, -1));
 
-        jComboBoxyear.setBackground(new java.awt.Color(204, 204, 255));
-        jComboBoxyear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jComboBoxyear.addActionListener(new java.awt.event.ActionListener() {
+        lbyear8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbyear8.setText("Registration No");
+        jPanel12.add(lbyear8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, 40));
+
+        lbyear9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbyear9.setText("Index No");
+        jPanel12.add(lbyear9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, 40));
+
+        lbyear10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbyear10.setText("Username");
+        jPanel12.add(lbyear10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, 40));
+
+        txtname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxyearActionPerformed(evt);
+                txtnameActionPerformed(evt);
             }
         });
+        jPanel12.add(txtname, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 240, 30));
 
-        lbyear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lbyear.setText("Semester");
-
-        jComboBoxsemster.setBackground(new java.awt.Color(204, 204, 255));
-        jComboBoxsemster.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jComboBoxsemster.addActionListener(new java.awt.event.ActionListener() {
+        txtdegree.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxsemsterActionPerformed(evt);
+                txtdegreeActionPerformed(evt);
             }
         });
+        jPanel12.add(txtdegree, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 240, 30));
 
-        btnadd.setBackground(new java.awt.Color(0, 0, 153));
-        btnadd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnadd.setForeground(new java.awt.Color(255, 255, 255));
-        btnadd.setText("Search");
-        btnadd.setBorder(null);
-        btnadd.addActionListener(new java.awt.event.ActionListener() {
+        txtregisterno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnaddActionPerformed(evt);
+                txtregisternoActionPerformed(evt);
             }
         });
+        jPanel12.add(txtregisterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 240, 30));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(lbyear1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBoxyear, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(lbyear)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBoxsemster, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnadd, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 474, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(17, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbyear1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxyear, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbyear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxsemster, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnadd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64))
-        );
+        txtindex.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtindexActionPerformed(evt);
+            }
+        });
+        jPanel12.add(txtindex, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 240, 30));
+
+        txtusername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtusernameActionPerformed(evt);
+            }
+        });
+        jPanel12.add(txtusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 240, 30));
+
+        lbyear11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbyear11.setText("University");
+        jPanel12.add(lbyear11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, 40));
+
+        txtuni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtuniActionPerformed(evt);
+            }
+        });
+        jPanel12.add(txtuni, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 240, 30));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/User_40px.png"))); // NOI18N
 
@@ -241,7 +232,7 @@ public class SemesterResults extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbuname, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
-                .addComponent(jLabel8)
+                .addComponent(jLabel6)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel7)
                 .addGap(22, 22, 22))
@@ -255,9 +246,9 @@ public class SemesterResults extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addComponent(jLabel3)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18))
+                .addGap(27, 27, 27)
+                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -271,21 +262,23 @@ public class SemesterResults extends javax.swing.JFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(lbuname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel8)
+                                .addComponent(jLabel6)
                                 .addComponent(jLabel9))
                             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(62, 62, 62)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
                         .addComponent(jLabel3)
-                        .addGap(24, 24, 24)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtGPA, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGap(8, 8, 8)
                                 .addComponent(jLabel4))))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(33, Short.MAX_VALUE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -309,11 +302,21 @@ public class SemesterResults extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 1008, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
@@ -323,53 +326,36 @@ public class SemesterResults extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jLabel7MouseClicked
 
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         String uname = lbuname.getText();
         Home home = new Home(uname);
         home.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jLabel8MouseClicked
+    }//GEN-LAST:event_jLabel6MouseClicked
 
-    private void jComboBoxyearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxyearActionPerformed
+    private void txtnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxyearActionPerformed
+    }//GEN-LAST:event_txtnameActionPerformed
 
-    private void jComboBoxsemsterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxsemsterActionPerformed
+    private void txtdegreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdegreeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxsemsterActionPerformed
+    }//GEN-LAST:event_txtdegreeActionPerformed
 
-    private void btnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddActionPerformed
-        int year = Integer.parseInt((String)jComboBoxyear.getSelectedItem());
-        int semester = Integer.parseInt((String)jComboBoxsemster.getSelectedItem());
+    private void txtregisternoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtregisternoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtregisternoActionPerformed
 
-        try{
+    private void txtindexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtindexActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtindexActionPerformed
 
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/myunilife","root","");
+    private void txtusernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtusernameActionPerformed
 
-            String sql = "select s.subject, s.code, r.result from subject s , results r where s.yid = '"+year+"' and s.semid ='"+semester+"' and s.subid=r.subid order by code asc";
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-
-            DefaultTableModel model = (DefaultTableModel)subjecttable.getModel();
-            model.setNumRows(0);
-            while(rs.next()){
-                String subject = rs.getString("subject");
-                String code = rs.getString("code");
-                String credit = rs.getString("result");
-                Object[] row = {subject,code,credit};
-                model.addRow(row);
-            }
-
-            con.close();
-            //JOptionPane.showMessageDialog(null,"Successfully Registered");
-            //dispose();
-            //Dashboard dashboard = new Dashboard(adminName);
-            //dashboard.setVisible(true);
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
-        }
-    }//GEN-LAST:event_btnaddActionPerformed
+    private void txtuniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtuniActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtuniActionPerformed
 
     /**
      * @param args the command line arguments
@@ -388,42 +374,49 @@ public class SemesterResults extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SemesterResults.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SemesterResults.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SemesterResults.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SemesterResults.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SemesterResults().setVisible(true);
+                new UpdateProfile().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnadd;
-    private javax.swing.JComboBox<String> jComboBoxsemster;
-    private javax.swing.JComboBox<String> jComboBoxyear;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel lbaddyear3;
     private javax.swing.JLabel lbuname;
-    private javax.swing.JLabel lbyear;
-    private javax.swing.JLabel lbyear1;
-    private javax.swing.JTable subjecttable;
+    private javax.swing.JLabel lbyear10;
+    private javax.swing.JLabel lbyear11;
+    private javax.swing.JLabel lbyear6;
+    private javax.swing.JLabel lbyear7;
+    private javax.swing.JLabel lbyear8;
+    private javax.swing.JLabel lbyear9;
     private javax.swing.JLabel txtGPA;
+    private javax.swing.JTextField txtdegree;
+    private javax.swing.JTextField txtindex;
+    private javax.swing.JTextField txtname;
+    private javax.swing.JTextField txtregisterno;
+    private javax.swing.JTextField txtuni;
+    private javax.swing.JTextField txtusername;
     // End of variables declaration//GEN-END:variables
 }
