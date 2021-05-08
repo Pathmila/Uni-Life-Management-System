@@ -5,6 +5,11 @@
  */
 package myunilife;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 import javax.swing.UIManager;
 
@@ -228,24 +233,144 @@ public class ReportGPA extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int A1 = 0;
+        int A2 = 0;
+        int A3 = 0;
+        int B1 = 0;
+        int B2 = 0;
+        int B3 = 0;
+        int C1 = 0;
+        int C2 = 0;
+        int C3 = 0;
+        int D1 = 0;
+        int D2 = 0;
+        int E = 0;
+        int F = 0;
+        
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/myunilife","root","");
+            
+            
+            String sql = "select count(result) from results where result = 'A+' " ;
+            Statement stm = con.createStatement();
+            ResultSet rst = stm.executeQuery(sql);
+            while(rst.next()){
+                A1 = rst.getInt("count(result)");
+            }
+            
+            String sql2 = "select count(result) from results where result = 'A' " ;
+            Statement stm2 = con.createStatement();
+            ResultSet rst2 = stm.executeQuery(sql2);
+            while(rst2.next()){
+                A2 = rst2.getInt("count(result)");
+            }
+            
+            String sql3 = "select count(result) from results where result = 'A-' " ;
+            Statement stm3 = con.createStatement();
+            ResultSet rst3 = stm.executeQuery(sql3);
+            while(rst3.next()){
+                A3 = rst3.getInt("count(result)");
+            }
+            
+            String sql4 = "select count(result) from results where result = 'B+' " ;
+            Statement stm4 = con.createStatement();
+            ResultSet rst4 = stm.executeQuery(sql4);
+            while(rst4.next()){
+                B1 = rst4.getInt("count(result)");
+            }
+            
+            String sql5 = "select count(result) from results where result = 'B' " ;
+            Statement stm5 = con.createStatement();
+            ResultSet rst5 = stm.executeQuery(sql5);
+            while(rst5.next()){
+                B2 = rst5.getInt("count(result)");
+            }
+            
+            String sql6 = "select count(result) from results where result = 'B-' " ;
+            Statement stm6 = con.createStatement();
+            ResultSet rst6 = stm.executeQuery(sql6);
+            while(rst6.next()){
+                B3 = rst6.getInt("count(result)");
+            }
+            
+            String sql7 = "select count(result) from results where result = 'C+' " ;
+            Statement stm7 = con.createStatement();
+            ResultSet rst7 = stm.executeQuery(sql7);
+            while(rst7.next()){
+                C1 = rst7.getInt("count(result)");
+            }
+            
+            String sql8 = "select count(result) from results where result = 'C' " ;
+            Statement stm8 = con.createStatement();
+            ResultSet rst8 = stm.executeQuery(sql8);
+            while(rst8.next()){
+                C2 = rst8.getInt("count(result)");
+            }
+            
+            String sql9 = "select count(result) from results where result = 'C-' " ;
+            Statement stm9 = con.createStatement();
+            ResultSet rst9 = stm.executeQuery(sql9);
+            while(rst9.next()){
+                C3 = rst9.getInt("count(result)");
+            }
+            
+            String sql10 = "select count(result) from results where result = 'D+' " ;
+            Statement stm10 = con.createStatement();
+            ResultSet rst10 = stm.executeQuery(sql10);
+            while(rst10.next()){
+                D1 = rst10.getInt("count(result)");
+            }
+            
+            String sql11 = "select count(result) from results where result = 'D' " ;
+            Statement stm11 = con.createStatement();
+            ResultSet rst11 = stm.executeQuery(sql11);
+            while(rst11.next()){
+                D2 = rst11.getInt("count(result)");
+            }
+            
+            String sql12 = "select count(result) from results where result = 'E' " ;
+            Statement stm12 = con.createStatement();
+            ResultSet rst12 = stm.executeQuery(sql12);
+            while(rst12.next()){
+                E = rst12.getInt("count(result)");
+            }
+            
+            String sql13 = "select count(result) from results where result = 'F' " ;
+            Statement stm13 = con.createStatement();
+            ResultSet rst13 = stm.executeQuery(sql13);
+            while(rst13.next()){
+                F = rst13.getInt("count(result)");
+            }
+            
+            con.close();
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        dataset.setValue(80, "Marks" , "Value 1" );
-        dataset.setValue(70, "Marks", "Value 2");
-        dataset.setValue(75, "Marks", "Value 3");
-        dataset.setValue(85, "Marks", "Value 4");
-        dataset.setValue(90, "Marks", "Value 5");
+        dataset.setValue(A1, "Marks" , "A+" );
+        dataset.setValue(A2, "Marks", "A");
+        dataset.setValue(A3, "Marks", "A-");
+        dataset.setValue(B1, "Marks" , "B+" );
+        dataset.setValue(B2, "Marks", "B");
+        dataset.setValue(B3, "Marks", "B-");
+        dataset.setValue(C1, "Marks" , "C+" );
+        dataset.setValue(C2, "Marks", "C");
+        dataset.setValue(C3, "Marks", "C-");
+        dataset.setValue(B3, "Marks", "D+");
+        dataset.setValue(C1, "Marks" , "D" );
+        dataset.setValue(C2, "Marks", "E");
+        dataset.setValue(C3, "Marks", "F");
 
-        JFreeChart chart = ChartFactory.createBarChart("Student’s Score", "Student’s Name","Marks", dataset, PlotOrientation.VERTICAL,false,true,false);
+        JFreeChart chart = ChartFactory.createBarChart("Student’s Grades", "Grade","No of grades", dataset, PlotOrientation.VERTICAL,false,true,false);
 
         CategoryPlot p = chart.getCategoryPlot();
 
         p.setRangeGridlinePaint(Color.black);
 
         ChartFrame frame = new ChartFrame("Bar Chart Report",chart);
-
         frame.setVisible(true);
-        frame.setLocationRelativeTo(null);
-
         frame.setSize(650,550);
     }//GEN-LAST:event_jButton1ActionPerformed
 
