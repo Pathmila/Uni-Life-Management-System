@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author ASUS
+ * @author ASUS-Asini Pathmila Silva
  */
 public class Home extends javax.swing.JFrame {
     float GPA=0;
@@ -85,6 +85,8 @@ public class Home extends javax.swing.JFrame {
             }else{
                 degree = "General Class";
             }
+            
+            //System.out.println(degree);
             
             con.close();
         }catch(Exception e){

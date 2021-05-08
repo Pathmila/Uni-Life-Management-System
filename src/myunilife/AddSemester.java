@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author ASUS
+ * @author ASUS-Asini Pathmila Silva
  */
 public class AddSemester extends javax.swing.JFrame {
 

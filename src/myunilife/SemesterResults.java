@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author ASUS
+ * @author ASUS-Asini Pathmila Silva
  */
 public class SemesterResults extends javax.swing.JFrame {
 

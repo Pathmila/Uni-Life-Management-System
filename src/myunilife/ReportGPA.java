@@ -26,7 +26,7 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 /**
  *
- * @author ASUS
+ * @author ASUS-Asini Pathmila Silva
  */
 public class ReportGPA extends javax.swing.JFrame {
 
@@ -34,6 +34,7 @@ public class ReportGPA extends javax.swing.JFrame {
      * Creates new form ReportGPA
      */
     float TGPA =0;
+    String MyDegree ="";
     
     public ReportGPA() {
         initComponents();
@@ -41,14 +42,18 @@ public class ReportGPA extends javax.swing.JFrame {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);       
     }
     
-    public ReportGPA(float GPA, String username) {
+    public ReportGPA(float GPA, String degree, String username) {
         initComponents();
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         
         lbuname.setText(username);
         TGPA=GPA;
+        MyDegree = degree;
         txtGPA.setText(Double.toString(GPA));
+        txtdegree.setText(MyDegree);
+        
+        
     }
 
     /**
@@ -72,6 +77,10 @@ public class ReportGPA extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtGPA = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        txtdegree = new javax.swing.JLabel();
+        txtCredits = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -115,23 +124,49 @@ public class ReportGPA extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("GPA");
-        jPanel12.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+        jLabel4.setText("Degree");
+        jPanel12.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
 
         txtGPA.setBackground(new java.awt.Color(102, 255, 204));
         txtGPA.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         txtGPA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtGPA.setAlignmentX(0.5F);
         txtGPA.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel12.add(txtGPA, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 200, 60));
+        jPanel12.add(txtGPA, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 200, 60));
 
-        jButton1.setText("jButton1");
+        jButton1.setBackground(new java.awt.Color(0, 0, 153));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("View No of Grades");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel12.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, -1, -1));
+        jPanel12.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, -1, 40));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("GPA");
+        jPanel12.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
+
+        txtdegree.setBackground(new java.awt.Color(102, 255, 204));
+        txtdegree.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        txtdegree.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtdegree.setAlignmentX(0.5F);
+        txtdegree.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel12.add(txtdegree, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 200, 60));
+
+        txtCredits.setBackground(new java.awt.Color(102, 255, 204));
+        txtCredits.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        txtCredits.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtCredits.setAlignmentX(0.5F);
+        txtCredits.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel12.add(txtCredits, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 200, 60));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Credits");
+        jPanel12.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/User_40px.png"))); // NOI18N
 
@@ -140,23 +175,24 @@ public class ReportGPA extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addGap(107, 107, 107)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 343, Short.MAX_VALUE)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbuname, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jLabel6)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel7)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel3)
+                        .addGap(34, 34, 34)
+                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(107, 107, 107)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 343, Short.MAX_VALUE)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbuname, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel7)))
                 .addGap(22, 22, 22))
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel3)
-                .addGap(34, 34, 34)
-                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -414,14 +450,18 @@ public class ReportGPA extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel lbuname;
+    private javax.swing.JLabel txtCredits;
     private javax.swing.JLabel txtGPA;
+    private javax.swing.JLabel txtdegree;
     // End of variables declaration//GEN-END:variables
 }

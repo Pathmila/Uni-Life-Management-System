@@ -21,7 +21,7 @@ import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
- * @author ASUS
+ * @author ASUS-Asini Pathmila Silva
  */
 public class ViewReports extends javax.swing.JFrame {
 
@@ -29,6 +29,7 @@ public class ViewReports extends javax.swing.JFrame {
      * Creates new form ViewReports
      */
     float TGPA =0;
+    String MyDegree="";
     
     public ViewReports() {
         initComponents();
@@ -310,7 +311,7 @@ public class ViewReports extends javax.swing.JFrame {
 
     private void GPAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GPAMouseClicked
         String uname = lbuname.getText();
-        ReportGPA reportGPA  = new ReportGPA (TGPA,uname);
+        ReportGPA reportGPA  = new ReportGPA (TGPA,MyDegree,uname);
         reportGPA.setVisible(true);
         dispose();
     }//GEN-LAST:event_GPAMouseClicked

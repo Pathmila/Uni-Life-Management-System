@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 import sun.awt.AWTAccessor;
 /**
  *
- * @author ASUS
+ * @author ASUS-Asini Pathmila Silva
  */
 public class AddResults extends javax.swing.JFrame {
 

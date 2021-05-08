@@ -17,7 +17,7 @@ import javax.swing.table.TableColumn;
 
 /**
  *
- * @author ASUS
+ * @author ASUS-Asini Pathmila Silva
  */
 public class ViewSubject extends javax.swing.JFrame {
 

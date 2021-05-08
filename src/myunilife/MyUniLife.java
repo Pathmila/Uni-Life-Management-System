@@ -7,7 +7,7 @@ package myunilife;
 
 /**
  *
- * @author ASUS
+ * @author ASUS-Asini Pathmila Silva
  */
 public class MyUniLife {
 
