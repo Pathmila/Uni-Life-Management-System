@@ -239,7 +239,7 @@ public class Login extends javax.swing.JFrame {
             //System.out.println("enter-"+md5);
                     
             //make the pw string on db 
-            String sql = "select * from mydetails where username= '"+uname+"' and password='"+md5+"'";
+            String sql = "select * from mydetails";
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
 
@@ -259,9 +259,13 @@ public class Login extends javax.swing.JFrame {
                         dispose();
                     }else{
                         JOptionPane.showMessageDialog(null,"Invalid password.");
+                        txtuname.setText("");
+                        enterpassword.setText("");
                     }
                 }else{
                     JOptionPane.showMessageDialog(null,"Invalid username.");
+                    txtuname.setText("");
+                    enterpassword.setText("");
                 }
                 
             }

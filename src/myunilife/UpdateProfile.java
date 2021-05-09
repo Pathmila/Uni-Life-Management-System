@@ -15,7 +15,7 @@ import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 /**
  *
- * @author ASUS
+  * @author ASUS-Asini Pathmila Silva
  */
 public class UpdateProfile extends javax.swing.JFrame {
 
@@ -414,7 +414,53 @@ public class UpdateProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_btnupdateActionPerformed
 
     private void btndeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeleteActionPerformed
-        // TODO add your handling code here:
+        int result = JOptionPane.showConfirmDialog(null, 
+                "Do you want to delete all the details?", "Select an Option...",JOptionPane.YES_NO_OPTION);
+        if(result == JOptionPane.YES_OPTION){
+            try{
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/myunilife","root","");
+                String sql = "delete from mydetails where username=?" ;
+                PreparedStatement pst= con.prepareStatement(sql);
+                pst.setString(1, (String)lbuname.getText()); 
+                int update1 = pst.executeUpdate();
+                    
+                String sql2 = "delete from subject " ;
+                PreparedStatement pst1= con.prepareStatement(sql2);                  
+                int update2 = pst1.executeUpdate();
+                    
+                String sql3 = "delete from results " ;
+                PreparedStatement pst3= con.prepareStatement(sql3);                  
+                int update3 = pst3.executeUpdate();
+                    
+                String sql4 = "delete from semester " ;
+                PreparedStatement pst4= con.prepareStatement(sql4);                  
+                int update4 = pst4.executeUpdate();
+                    
+                String sql5 = "delete from year " ;
+                PreparedStatement pst5= con.prepareStatement(sql5);                  
+                int update5 = pst5.executeUpdate();
+                
+                System.out.println(update1+" "+update2+" "+update3+" "+update4+" "+update5);
+                    
+                if((update1 == 1)&&(update2 == 1)&&(update3 == 1)&&(update4 == 1)&&(update5 == 1)){
+                    JOptionPane.showMessageDialog(null,"Deletion is sucess");                    
+                    Login login = new Login();
+                    login.setVisible(true);
+                    dispose();
+                }else{
+                    JOptionPane.showMessageDialog(null,"Deletion is failed");
+                }
+                con.close();
+                //dispose();
+                //Dashboard dashboard = new Dashboard(adminName);
+                //dashboard.setVisible(true);
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }else if (result == JOptionPane.NO_OPTION){
+               
+        }      
     }//GEN-LAST:event_btndeleteActionPerformed
 
     /**

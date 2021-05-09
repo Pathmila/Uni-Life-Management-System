@@ -208,41 +208,46 @@ public class ForgetPassword extends javax.swing.JFrame {
             char[] password = enterpassword.getPassword();
             char[] confirmpassword = cpassword.getPassword();
             
-            System.out.println(password);
+            //System.out.println(password);
                        
             //make the pw string on db
             String sql = "select * from mydetails where username= '"+uname+"'";
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
 
-            if(rs.next()){
-                Validation validation = new Validation();
-                boolean result = validation.validPassword(password,confirmpassword);
-
-                if(result){
-                    SimpleMD5Example simpleMD5Example = new SimpleMD5Example();
-                    String md5 = simpleMD5Example.getHash(password);
-                    System.out.println("enter-"+md5); 
-                                        
-                    String sql1 = "update mydetails set password=? where username='"+uname+"' ";
-                    PreparedStatement pst= con.prepareStatement(sql1);
-                    pst.setString(1,md5);
-                    int rs1 = pst.executeUpdate();
+            String username;
             
-                    if(rs1>0){
-                        JOptionPane.showMessageDialog(null, "Successfully Updated");
-                        Home home = new Home(uname);
-                        home.setVisible(true);
-                        dispose();
+            if(rs.next()){
+                username = rs.getString("username");
+                
+                if(username.equals(uname)){
+                    Validation validation = new Validation();
+                    boolean result = validation.validPassword(password,confirmpassword);
+
+                    if(result){
+                        SimpleMD5Example simpleMD5Example = new SimpleMD5Example();
+                        String md5 = simpleMD5Example.getHash(password);
+                        //System.out.println("enter-"+md5); 
+
+                        String sql1 = "update mydetails set password=? where username='"+uname+"' ";
+                        PreparedStatement pst= con.prepareStatement(sql1);
+                        pst.setString(1,md5);
+                        int rs1 = pst.executeUpdate();
+
+                        if(rs1>0){
+                            JOptionPane.showMessageDialog(null, "Successfully Updated");
+                            Home home = new Home(uname);
+                            home.setVisible(true);
+                            dispose();
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Updated Failed");
+                        }
                     }else{
-                        JOptionPane.showMessageDialog(null, "Updated Failed");
+                        JOptionPane.showMessageDialog(null, "Invaild Password.");
                     }
                 }else{
-                    JOptionPane.showMessageDialog(null, "Invaild Password.");
+                    JOptionPane.showMessageDialog(null,"Invalid username.");
                 }
-                
-            }else{
-                JOptionPane.showMessageDialog(null,"Invalid username.");
             }
             con.close();
             //dispose();
